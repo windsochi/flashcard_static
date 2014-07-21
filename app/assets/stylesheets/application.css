@@ -1,6 +1,5 @@
-p {
-	font-size: 22px;
-}
+@import 'index.css';
+
 #container {
   margin: 48px auto;
   width: 960px;
