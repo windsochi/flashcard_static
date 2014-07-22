@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140722123324) do
+ActiveRecord::Schema.define(version: 20140722155038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140722123324) do
   create_table "cards", force: true do |t|
     t.text     "original_text"
     t.text     "translated_text"
-    t.date     "review_date"
+    t.datetime "review_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
