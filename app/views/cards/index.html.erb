@@ -1,1 +1,16 @@
-All cards
+<table>
+<tr>
+ <th>Review date</th>
+ <th>Original</th>
+ <th>Translate</th>
+</tr>
+
+<% @cards.each do |card| %>
+<tr>
+ <td><%= card.review_date %>     </td>
+ <td><%= card.original_text %>   </td>
+ <td><%= card.translated_text %> </td>
+</tr>
+<% end %>
+
+</table>
