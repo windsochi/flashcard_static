@@ -1,7 +1,8 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: blog_development
+  database: flashcard
   pool: 5
-  username: blog
-  password:
+  username: postgres
+  password: postgres
+  port: 5432
