@@ -7,7 +7,7 @@
 
 <% @cards.each do |card| %>
 <tr>
- <td><%= card.review_date %>     </td>
+ <td><%= card.review_date.to_s(:month_and_year) %>     </td>
  <td><%= card.original_text %>   </td>
  <td><%= card.translated_text %> </td>
 </tr>
