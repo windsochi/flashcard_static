@@ -14,7 +14,7 @@
     <td><%= card.original_text %>   </td>
     <td><%= card.translated_text %> </td>
     <td><%= link_to 'Edit', edit_card_path(card) %></td>
-    <td><a href="#">Delete</a></td>
+    <td><%= link_to 'Delete', card_path(card), method: :delete, data: { confirm: 'Уверен?' }  %></td>
   </tr>
 
   <% end %>
