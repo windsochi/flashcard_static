@@ -15,6 +15,12 @@ class CardsController < ApplicationController
       render 'edit'
     end
   end
+
+  def destroy
+    @card = Card.find(params[:id])
+    @card.destroy
+    redirect_to cards_path
+  end
 end
 
 private
