@@ -1,6 +1,6 @@
-<h1>Редактирование</h1>
+<h1>Новая карточка</h1>
 
-<%= form_for :card, url: card_path do |f| %>
+<%= form_for :card, url: cards_path do |f| %>
   <p>
     <%= f.label :review_date %><br>
     <%= f.text_field :review_date %>
