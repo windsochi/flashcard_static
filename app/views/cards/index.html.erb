@@ -3,6 +3,8 @@
     <th>Review date</th>
     <th>Original</th>
     <th>Translate</th>
+    <th></th>
+    <th></th>
   </tr>
 
   <% @cards.each do |card| %>
@@ -11,6 +13,8 @@
     <td><%= card.review_date.to_s(:month_and_year) %>     </td>
     <td><%= card.original_text %>   </td>
     <td><%= card.translated_text %> </td>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
   </tr>
 
   <% end %>
