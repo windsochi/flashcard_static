@@ -16,3 +16,8 @@ class CardsController < ApplicationController
     end
   end
 end
+
+private
+  def card_params
+    params.require(:card).permit(:review_date, :original_text, :translated_text)
+  end
