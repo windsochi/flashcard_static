@@ -3,6 +3,9 @@ class CardsController < ApplicationController
     @cards = Card.all
   end
   
+  def new
+  end
+  
   def edit
     @card = Card.find(params[:id])
   end
