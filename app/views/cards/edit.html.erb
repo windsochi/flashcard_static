@@ -1,6 +1,6 @@
 <h1>Редактирование</h1>
 
-<%= form_for :card, url: card_path(@card), method: :patch do |f| %>
+<%= simple_form_for :card, url: card_path(@card), method: :patch do |f| %>
   <% if @card.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@card.errors.count, "error") %> не удается сохранить изменения:</h2>
@@ -12,22 +12,19 @@
   </div>
   <% end %>
   <p>
-    <%= f.label :review_date %><br>
-    <%= f.text_field :review_date %>
+    <%= f.input :review_date, label: 'Review date:' %>
   </p>
 
   <p>
-    <%= f.label :original_text %><br>
-    <%= f.text_field :original_text %>
+    <%= f.input :original_text, label: 'Original text:' %>
   </p>
 
   <p>
-    <%= f.label :translated_text %><br>
-    <%= f.text_field :translated_text %>
+    <%= f.input :translated_text, label: 'Translated text:' %>
   </p>
 
   <p>
-    <%= f.submit %>
+    <%= f.button :submit %>
   </p>
 
 <% end %>
