@@ -1,6 +1,17 @@
 <h1>Новая карточка</h1>
 
 <%= form_for :card, url: cards_path do |f| %>
+  <% if @card.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@card.errors.count, "error") %> prohibted this card from being saved:</h2>
+    <ul>
+      <%= @card.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
   <p>
     <%= f.label :review_date %><br>
     <%= f.text_field :review_date %>

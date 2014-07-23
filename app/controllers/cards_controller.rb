@@ -4,12 +4,16 @@ class CardsController < ApplicationController
   end
   
   def new
+    @card = Card.new
   end
 
   def create
     @card = Card.new(card_params)
-    @card.save
-    redirect_to cards_path
+    if @card.save
+      redirect_to cards_path
+    else
+      render 'new'
+    end
   end
   
   def show
