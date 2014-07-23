@@ -2,17 +2,17 @@
 
 <%= form_for :card, url: card_path(@card), method: :patch do |f| %>
   <p>
-    <%= f.label :text %><br>
+    <%= f.label :review_date %><br>
     <%= f.text_field :review_date %>
   </p>
 
   <p>
-    <%= f.label :text %><br>
+    <%= f.label :original_text %><br>
     <%= f.text_field :original_text %>
   </p>
 
   <p>
-    <%= f.label :text %><br>
+    <%= f.label :translated_text %><br>
     <%= f.text_field :translated_text %>
   </p>
 
