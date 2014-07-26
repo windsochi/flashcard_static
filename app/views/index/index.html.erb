@@ -1,1 +1,8 @@
-<p class="f1">Первый в мире удобный менеджер флеш-карточек. Именно так.</p>
+<% @card.each do |card| %>
+  <%= card.original_text %>
+<% end %>
+
+<%= simple_form_for root_path, :method => :get do |f| %>
+  <%= f.input_field :search, placeholder: 'Your answer' %>
+  <%= f.submit 'Verify' %>
+<% end %>
