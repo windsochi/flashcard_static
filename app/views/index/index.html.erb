@@ -2,7 +2,7 @@
   <%= card.original_text %>
 <% end %>
 
-<%= simple_form_for root_path, :method => :get do |f| %>
+<%= simple_form_for root_path, remote: true, :method => :get do |f| %>
   <%= f.input_field :search, placeholder: 'Your answer' %>
   <%= f.submit 'Verify' %>
 <% end %>
