@@ -1,4 +1,4 @@
-<%= Card.first_card.original_text %>
+<%= @random_card.original_text %>
 
 <%= simple_form_for root_path, method: :get do |f| %>
   <%= f.input_field :search %>

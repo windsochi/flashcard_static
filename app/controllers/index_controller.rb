@@ -1,9 +1,10 @@
 class IndexController < ApplicationController
   def index
-  if params[:search] == Card.first_card[:original_text] 
-      flash[:notice] = "Verno"
+  @random_card = Card.due.first
+    if params[:search] == @random_card.translated_text
+      flash[:notice] = "Correct"
       else
-        flash[:notice] = "Neverno"
+        flash[:notice] = "Incorrect"
     end
   end
 end
