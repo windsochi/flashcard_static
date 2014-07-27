@@ -1,6 +1,6 @@
 <%= @random_card.original_text %>
 
-<%= simple_form_for root_path, method: :get do |f| %>
+<%= simple_form_for "check#index", method: :get do |f| %>
   <%= f.input_field :search %>
   <%= f.submit 'Verify' %>
 <% end %>
