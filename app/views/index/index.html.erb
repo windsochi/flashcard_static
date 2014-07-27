@@ -1,8 +1,12 @@
-<% @card.each do |card| %>
-  <%= card.original_text %>
-<% end %>
+<%= Card.first_card.original_text %>
 
-<%= simple_form_for root_path, remote: true, :method => :get do |f| %>
-  <%= f.input_field :search, placeholder: 'Your answer' %>
+<%= simple_form_for root_path, method: :get do |f| %>
+  <%= f.input_field :search %>
   <%= f.submit 'Verify' %>
 <% end %>
+
+<p>
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: name %>
+  <% end %>
+</p>
