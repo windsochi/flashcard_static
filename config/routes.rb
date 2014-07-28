@@ -1,5 +1,5 @@
 FlashcardStatic::Application.routes.draw do
   root 'index#index'
   resources :cards
-  resources :check
+  get '/:search', to: 'check#index', as: 'check'
 end
