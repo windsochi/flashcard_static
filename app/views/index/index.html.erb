@@ -1,6 +1,7 @@
-<%= @random_card.original_text %>
+<b><%= @random_card.original_text %></b> = 
+<%= @random_card.review_date %>
 
-<%= simple_form_for "check#index", method: :get do |f| %>
+<%= simple_form_for check_index_path, method: :get do |f| %>
   <%= f.input_field :search %>
   <%= f.submit 'Verify' %>
 <% end %>
