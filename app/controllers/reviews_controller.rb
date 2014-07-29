@@ -1,9 +1,9 @@
-class CheckController < ApplicationController
+class ReviewsController < ApplicationController
   def index
-    card = Card.find(params[:check_id_card])
+    card = Card.find(params[:card_id])
     if card.check_translation(params[:search])
       flash[:success] = "Correct!"
-      card.update_attributes(review_date: Time.now+3.days)
+      card.update_review_date
     else
       flash[:error] = "Incorrect!"
     end
