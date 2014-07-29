@@ -1,9 +1,9 @@
-<b><%= @random_card.original_text %></b> = 
-<%= @random_card.review_date %>
+<b><%= @random_card.original_text %></b>
 
-<%= simple_form_for check_path, method: :get do |f| %>
-  <%= f.input_field :search %>
-  <%= f.submit 'Verify' %>
+<%= form_tag check_path, method: :put do %>
+  <%= text_field_tag :search %>
+  <%= hidden_field_tag(:check_id_card, @random_card.id) %>
+  <%= submit_tag 'Verify' %>
 <% end %>
 
 <p>
