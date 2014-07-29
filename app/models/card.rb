@@ -6,7 +6,7 @@ class Card < ActiveRecord::Base
     translation == translated_text
   end
 
-  def update_review_date
+  def create_card
     update_attributes(review_date: Time.now + 3.days)
   end
 end
