@@ -13,7 +13,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'debugger'
   gem 'rspec'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.0.0'
   gem 'capybara'
   gem 'database_cleaner'
 end
