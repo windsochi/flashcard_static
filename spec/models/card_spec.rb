@@ -1,8 +1,8 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Card do
+RSpec.describe Card, :type => :model do
   before do
-    @card = Card.new(original_text: "House", translated_text: "Дом", review_date: Time.now - 4.days)
+    @card = Card.create!(original_text: "House", translated_text: "Дом", review_date: Time.now - 4.days)
   end
 
   it "check translated_text & original_text" do
