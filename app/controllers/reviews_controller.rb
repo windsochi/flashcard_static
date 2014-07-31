@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  def index
+  def create_card
     card = Card.find(params[:card_id])
     if card.check_translation(params[:search])
       flash[:success] = "Correct!"
