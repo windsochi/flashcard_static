@@ -1,6 +1,6 @@
 <b><%= @random_card.original_text %></b>
 
-<%= form_tag reviews_path, method: :put do %>
+<%= form_tag reviews_path, method: :post do %>
   <%= text_field_tag :search %>
   <%= hidden_field_tag(:card_id, @random_card.id) %>
   <%= submit_tag 'Verify' %>
