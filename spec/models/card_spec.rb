@@ -6,11 +6,11 @@ RSpec.describe Card do
     @card = Card.create!(original_text: "House", translated_text: "Дом", review_date: Time.now - 3.days)
   end
 
-  it "check translated for false" do
+  it "doesn't permit invalid translation" do
     expect(@card.check_translation("Домик")).to be false
   end
 
-  it "check translated for true" do
+  it "permits valid translation" do
     expect(@card.check_translation("Дом")) == (@card.translated_text)
   end
 
