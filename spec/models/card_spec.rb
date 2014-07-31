@@ -6,8 +6,12 @@ RSpec.describe Card, :type => :model do
     @card = Card.create!(original_text: "House", translated_text: "Дом", review_date: Time.now - 3.days)
   end
 
-  it "check translated_text & original_text" do
+  it "check translated false" do
   	expect(@card.check_translation("Домик")).to be false
+  end
+
+  it "check translated true" do
+    expect(@card.check_translation("Дом")) == (@card.translated_text)
   end
 
   it "Update review_date = + 3.days" do
