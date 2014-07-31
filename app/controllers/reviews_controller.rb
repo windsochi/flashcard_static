@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
     card = Card.find(params[:card_id])
     if card.check_translation(params[:search])
       flash[:success] = "Correct!"
-      card.create_card
+      card.update_review_date
     else
       flash[:error] = "Incorrect!"
     end

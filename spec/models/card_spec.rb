@@ -15,7 +15,7 @@ RSpec.describe Card do
   end
 
   it "Updates reviews date" do
-    expect(@card.create_card) == (Time.now + 3.days)
+    expect(@card.update_review_date) == (Time.now + 3.days)
   end
 
 end
