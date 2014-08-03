@@ -14,4 +14,6 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.before(:each) { DatabaseCleaner.start }
   config.after(:each) { DatabaseCleaner.clean }
+  config.include Capybara::DSL
+  config.include FactoryGirl::Syntax::Methods
 end
