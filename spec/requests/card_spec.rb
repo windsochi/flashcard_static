@@ -11,9 +11,9 @@ RSpec.describe "Managing cards" do
 
   it "should be able to add card" do
     expect(page).to have_title 'Флэшкарточкер | Новая карточка'
-    fill_in 'Review date', :with => card.review_date
-    fill_in 'Original text', :with => card.original_text
-    fill_in 'Translated text', :with => card.translated_text
+    fill_in 'Review date', with: card.review_date
+    fill_in 'Original text', with: card.original_text
+    fill_in 'Translated text', with: card.translated_text
     click_button('Save Card')
   end
 
