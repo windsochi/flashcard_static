@@ -8,6 +8,7 @@ RSpec.describe "Managing cards" do
 
   it "should be able to add card" do
   	expect(page).to have_title 'Флэшкарточкер | Новая карточка'
+
   end
 
 end
