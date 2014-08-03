@@ -2,10 +2,11 @@ require 'rails_helper'
 
 RSpec.describe "Managing cards" do
 
-  let(:card) { FactoryGirl.create(:card) }
+  let!(:card) { FactoryGirl.create(:card) }
 
   before do
     visit new_card_path
+    FactoryGirl.create(:card)
   end
 
   it "should be able to add card" do
@@ -17,12 +18,15 @@ RSpec.describe "Managing cards" do
   end
 
   it "should be able card for root_path" do
-    visit root_path
+    visit cards_path
     expect(page).to have_content 'Helicopter'
   end
 
   it "should be able check translated" do
-    expect(card.check_translation("Вертолётик")).to be false
+    visit root_path
+    fill_in 'search', :with => 'Вертолет'
+    click_button('Verify')
+    expect(page).to have_content 'Correct!'
   end
 
 end
