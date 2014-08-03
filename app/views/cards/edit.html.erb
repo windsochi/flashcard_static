@@ -1,4 +1,4 @@
-<% provide(:title, 'Изменение в карточке') %>
+<% content_for(:title, 'Изменение в карточке') %>
 <h1>Редактирование</h1>
 
 <%= simple_form_for :card, url: card_path(@card), method: :patch do |f| %>
