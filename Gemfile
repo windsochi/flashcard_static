@@ -14,6 +14,8 @@ group :development, :test do
   gem 'better_errors'
   gem 'debugger'
   gem 'rspec-rails', '~> 3.0.0'
+  gem 'capybara'
+  gem 'factory_girl_rails'
 end
 
 group :doc do
