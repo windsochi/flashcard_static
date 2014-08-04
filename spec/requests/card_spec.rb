@@ -22,11 +22,18 @@ RSpec.describe "Managing cards" do
     expect(page).to have_content 'Helicopter'
   end
 
-  it "should be able check translated" do
+  it "should be able check translated for correct" do
     visit root_path
     fill_in 'search', :with => 'Вертолет'
     click_button('Verify')
     expect(page).to have_content 'Correct!'
+  end
+
+  it "should be able check translated for incorrect" do
+    visit root_path
+    fill_in 'search', :with => 'Вертолётик'
+    click_button('Verify')
+    expect(page).to have_content 'Incorrect!'
   end
 
 end
