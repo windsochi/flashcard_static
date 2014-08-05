@@ -4,10 +4,6 @@ RSpec.describe "Managing cards" do
 
   let!(:card) { FactoryGirl.create(:card) }
 
-  before do
-    FactoryGirl.create(:card)
-  end
-
   it "should be able to add card" do
     visit new_card_path
     fill_in 'Review date', with: card.review_date
