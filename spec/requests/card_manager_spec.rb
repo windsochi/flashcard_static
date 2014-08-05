@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Managing cards" do
+describe "Managing cards" do
 
   let!(:card) { FactoryGirl.create(:card) }
 

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Homepage" do
+describe "Homepage" do
 
   before :each do
     FactoryGirl.create(:card, original_text: "Helicopter", translated_text: "Вертолет")
