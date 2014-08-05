@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe "Homepage" do
 
   before :each do
-		FactoryGirl.create(:card, original_text: "Helicopter", translated_text: "Вертолет")
-		visit root_path
-	end
+    FactoryGirl.create(:card, original_text: "Helicopter", translated_text: "Вертолет")
+    visit root_path
+  end
 
   it "should show correct message for correct translation" do
     fill_in 'search', with: 'Вертолет'
