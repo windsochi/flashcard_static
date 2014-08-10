@@ -3,9 +3,9 @@ class CreateCards < ActiveRecord::Migration
     create_table :cards do |t|
       t.text :original_text
       t.text :translated_text
-      t.datetime :review_date
-
+      t.datetime :review_dat
       t.timestamps
     end
+    add_index :cards, :user_id
   end
 end
