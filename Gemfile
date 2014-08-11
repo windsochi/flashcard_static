@@ -9,6 +9,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'pg'
 gem 'rails_12factor', '0.0.2'
 gem 'simple_form'
+gem 'sorcery'
 
 group :development, :test do
   gem 'better_errors'

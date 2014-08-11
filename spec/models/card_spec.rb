@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Card do
 
   before do
-    @card = Card.create!(original_text: "House", translated_text: "Дом", review_date: Time.now - 3.days)
+    @card = Card.create!(original_text: "House", translated_text: "Дом", review_date: Time.now - 3.days, user_id: "1")
   end
 
   it "doesn't permit invalid translation" do
