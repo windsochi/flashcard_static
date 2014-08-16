@@ -3,11 +3,23 @@
 
 <%= simple_form_for :user, url: users_path do |f| %>
   <p>
-    <%= f.input :email, label: 'Электронная почта' %>
+    <%= f.input :email, label: 'Электронная почта:' %>
   </p>
 
   <p>
-    <%= f.input :password, label: 'Пароль'  %>
+    <%= f.input :password, label: 'Пароль:' %>
+  </p>
+
+  <p>
+    <%= f.input :password_confirmation, label: 'Повторите пароль:' %>
+  </p>
+
+  <p>
+    <%= f.input :crypted_password, label: 'crypted_password:' %>
+  </p>
+
+  <p>
+    <%= f.input :salt, label: 'salt:' %>
   </p>
 
   <p>

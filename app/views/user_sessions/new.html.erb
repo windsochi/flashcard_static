@@ -1,3 +1,20 @@
-<h1>Форма входа</h1>
+<% content_for(:title, 'Вход в систему') %>
 
-<%= render 'form' %>
+<%= simple_form_for :user_sessions, url: user_sessions_path, method: :post do |f| %>
+  <p>
+    <%= f.input :email, label: 'Электронная почта:' %>
+  </p>
+
+  <p>
+    <%= f.input :password, label: 'Пароль:' %>
+  </p>
+
+  <p>
+    <%= f.input :password_confirmation, label: 'Повторите пароль:' %>
+  </p>
+
+  <p>
+    <%= f.button :submit, 'Войти' %>
+  </p>
+
+<% end %>

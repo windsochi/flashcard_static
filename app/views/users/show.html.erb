@@ -6,8 +6,13 @@
 </p>
 
 <p>
-  <b>Пароль:</b>
-  <%= @user.password %>
+  <b>Crypted password:</b>
+  <%= @user.crypted_password %>
+</p>
+
+<p>
+  <b>Salt:</b>
+  <%= @user.salt %>
 </p>
 
 <%= link_to 'Изменить', edit_user_path(@user) %> |

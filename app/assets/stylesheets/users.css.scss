@@ -1,6 +1,9 @@
 #notice {
   color: green;
 }
+#alert {
+  color: red;
+}
 
 .field_with_errors {
   padding: 2px;
@@ -28,5 +31,32 @@
   ul li {
     font-size: 12px;
     list-style: square;
+  }
+}
+
+form {
+    width: 500px;
+  div {
+    input {
+    float: right;
+    }
+  }
+}
+
+table#users {
+  tr#top {
+    background: #CCC;
+    height: 40px;
+    border-bottom: 1px solid;
+    th {
+      padding: 10px;
+    }
+  }
+  tr#content {
+    height: 40px;
+    border-bottom: 1px solid;
+  }
+  td {
+    padding: 10px;
   }
 }

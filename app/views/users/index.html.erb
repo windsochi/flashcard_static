@@ -1,10 +1,10 @@
 <% content_for(:title, 'Все пользователи') %>
 
-<table>
+<table id="users">
   <thead>
-    <tr>
+    <tr id="top">
       <th>Почта</th>
-      <th>Crypted пароль</th>
+      <th>Crypted password</th>
       <th>Salt</th>
       <th></th>
       <th></th>
@@ -14,9 +14,9 @@
 
   <tbody>
     <% @users.each do |user| %>
-      <tr>
+      <tr id="content">
         <td><%= user.email %></td>
-        <td><%= user.password %></td>
+        <td><%= user.crypted_password %></td>
         <td><%= user.salt %></td>
         <td><%= link_to 'Показать', user %></td>
         <td><%= link_to 'Изменить', edit_user_path(user) %></td>
