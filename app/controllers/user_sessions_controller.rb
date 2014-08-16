@@ -1,6 +1,5 @@
 class UserSessionsController < ApplicationController
   skip_before_filter :require_login, except: [:destroy]
-
   def new
     @user = User.new
   end
@@ -16,6 +15,6 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to(:users, notice: 'Выход выполнен!')
+    redirect_to(root_path, notice: 'Logged out!')
   end
 end

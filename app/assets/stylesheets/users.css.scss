@@ -36,6 +36,9 @@
 
 form {
     width: 500px;
+  .user-sessions {
+      height: 40px;
+    }
   div {
     input {
     float: right;
@@ -58,5 +61,6 @@ table#users {
   }
   td {
     padding: 10px;
+    font-size: 0.9em;
   }
 }

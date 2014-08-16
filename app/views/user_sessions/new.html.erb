@@ -1,20 +1,18 @@
 <% content_for(:title, 'Вход в систему') %>
+<%= form_tag user_sessions_path, method: :post do %>
 
-<%= simple_form_for :user_sessions, url: user_sessions_path, method: :post do |f| %>
-  <p>
-    <%= f.input :email, label: 'Электронная почта:' %>
-  </p>
+  <div class="user-sessions">
+    <%= label_tag 'Электронная почта' %>
+    <%= text_field_tag :email %>
+  </div>
 
-  <p>
-    <%= f.input :password, label: 'Пароль:' %>
-  </p>
+  <div class="user-sessions">
+    <%= label_tag 'Пароль' %>
+    <%= password_field_tag :password %>
+  </div>
 
-  <p>
-    <%= f.input :password_confirmation, label: 'Повторите пароль:' %>
-  </p>
-
-  <p>
-    <%= f.button :submit, 'Войти' %>
-  </p>
+  <div class="user-sessions">
+    <%= submit_tag 'Войти' %>
+  </div>
 
 <% end %>

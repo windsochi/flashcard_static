@@ -9,17 +9,17 @@ class UsersController < ApplicationController
   def show
   end
 
-  def edit
-  end
-
   def new
     @user = User.new
+  end
+
+  def edit
   end
 
   def create
     @user = User.new(user_params)
       if @user.save
-        redirect_to users_path
+        redirect_to(users_path, notice: 'Пользователь создан')
       else
         render 'new'
       end
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
   def update
       if @user.update(user_params)
-        redirect_to users_path
+        redirect_to(users_path, notice: 'Пользователь обновлён.')
       else
         render 'edit'
       end
@@ -39,13 +39,11 @@ class UsersController < ApplicationController
   end
 
   private
-
     def set_user
       @user = User.find(params[:id])
     end
 
-  def user_params
-    params.require(:user).permit(:email, :password)
+    def user_params
+    params.require(:user).permit(:email, :password, :password_confirmation)
   end
-
 end
