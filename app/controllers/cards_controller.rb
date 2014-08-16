@@ -4,7 +4,7 @@ class CardsController < ApplicationController
   def index
     @cards = Card.all
   end
-  
+
   def new
     @card = Card.new
   end
@@ -17,13 +17,13 @@ class CardsController < ApplicationController
       render 'new'
     end
   end
-  
+
   def show
   end
-  
+
   def edit
   end
-  
+
   def update
     if @card.update(card_params)
       redirect_to cards_path

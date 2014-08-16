@@ -16,7 +16,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.email %></td>
-        <td><%= user.crypted_password %></td>
+        <td><%= user.password %></td>
         <td><%= user.salt %></td>
         <td><%= link_to 'Показать', user %></td>
         <td><%= link_to 'Изменить', edit_user_path(user) %></td>

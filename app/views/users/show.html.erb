@@ -1,18 +1,13 @@
-<p id="notice"><%= notice %></p>
+<h1>Просмотр</h1>
 
 <p>
-  <strong>Электронная почта:</strong>
+  <b>Электронная почта:</b>
   <%= @user.email %>
 </p>
 
 <p>
-  <strong>Зашифрованный пароль:</strong>
+  <b>Пароль:</b>
   <%= @user.password %>
-</p>
-
-<p>
-  <strong>Salt:</strong>
-  <%= @user.salt %>
 </p>
 
 <%= link_to 'Изменить', edit_user_path(@user) %> |

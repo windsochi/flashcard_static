@@ -1,6 +1,17 @@
-<h1>Редактирование пользователя</h1>
+<% content_for(:title, 'Изменение в учётной записи') %>
+<h1>Редактирование</h1>
 
-<%= render 'form' %>
+<%= simple_form_for :user, url: user_path(@user), method: :patch do |f| %>
+  <p>
+    <%= f.input :email, label: 'Электронная почта:' %>
+  </p>
 
-<%= link_to 'Показать', @user %> |
-<%= link_to 'Назад', users_path %>
+  <p>
+    <%= f.input :password, label: 'Пароль:' %>
+  </p>
+
+  <p>
+    <%= f.button :submit %>
+  </p>
+
+<% end %>
