@@ -41,8 +41,8 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-    	format.html{redirect_to users_url}
-    	format.json{head :no_content}
+      format.html{redirect_to users_url}
+      format.json{head :no_content}
     end
   end
 
@@ -53,7 +53,7 @@ class UsersController < ApplicationController
     end
 
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:email, :password, :password_confirmation)
   end
 
 end

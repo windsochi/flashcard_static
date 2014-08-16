@@ -8,8 +8,3 @@ module FlashcardStatic
   class Application < Rails::Application
   end
 end
-
-module Sorcery
-  class Application < Rails::Application
-  end
-end

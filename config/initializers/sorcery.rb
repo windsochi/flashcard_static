@@ -2,7 +2,6 @@ Rails.application.config.sorcery.submodules = []
 
 Rails.application.config.sorcery.configure do |config|
 
-  # --- user config ---
   config.user_config do |user|
   end
 
