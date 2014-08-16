@@ -1,0 +1,31 @@
+<% content_for(:title, 'Все пользователи') %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Почта</th>
+      <th>Crypted пароль</th>
+      <th>Salt</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.crypted_password %></td>
+        <td><%= user.salt %></td>
+        <td><%= link_to 'Показать', user %></td>
+        <td><%= link_to 'Изменить', edit_user_path(user) %></td>
+        <td><%= link_to 'Удалить', user, method: :delete, data: { confirm: 'Уверены?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Новый пользователь', new_user_path %>
