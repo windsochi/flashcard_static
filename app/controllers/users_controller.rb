@@ -19,7 +19,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
       if @user.save
-        redirect_to(users_path, notice: 'Пользователь создан')
+          if login(@user.email, params[:user][:password], false)
+            redirect_to(users_path, notice: 'Пользователь создан')
+          end
       else
         render 'new'
       end

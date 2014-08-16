@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
 
   private
   def not_authenticated
-    redirect_to login_path, alert: "Сперва войдите"
+    redirect_to login_path, alert: "Пожалуйста войдите"
   end
 end

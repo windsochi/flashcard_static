@@ -64,3 +64,11 @@ table#users {
     font-size: 0.9em;
   }
 }
+#allusers {
+  width: 700px;
+  p {
+    span {
+      float: right;
+    }
+  }
+}
