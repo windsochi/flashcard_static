@@ -14,7 +14,7 @@
     <%= f.input :translated_text, label: 'Translated text' %>
   </p>
   <p>
-    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :user_id, value: current_user.id.to_i %>
   </p>
 
   <p>
