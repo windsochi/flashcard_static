@@ -10,4 +10,5 @@ class Card < ActiveRecord::Base
   def update_review_date
     update_attributes(review_date: Time.now + 3.days)
   end
+
 end

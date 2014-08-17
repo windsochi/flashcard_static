@@ -13,8 +13,10 @@ class CardsController < ApplicationController
     @card = Card.new(card_params)
     if @card.save
       redirect_to cards_path
+      flash[:notice] = 'Карточка успешно создана'
     else
       render 'new'
+      flash[:alert] = 'Карточка не создана'
     end
   end
 
@@ -36,11 +38,12 @@ class CardsController < ApplicationController
     @card.destroy
     redirect_to cards_path
   end
+
 end
 
 private
   def card_params
-    params.require(:card).permit(:review_date, :original_text, :translated_text)
+    params.require(:card).permit(:review_date, :original_text, :translated_text, :user_id)
   end
 
   def find_card
