@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+
   def create
     card = Card.find(params[:card_id])
     if card.check_translation(params[:search])
@@ -9,4 +10,5 @@ class ReviewsController < ApplicationController
     end
     redirect_to root_path
   end
+
 end

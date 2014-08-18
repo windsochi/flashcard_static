@@ -2,17 +2,17 @@
 <%= form_tag user_sessions_path, method: :post do %>
 
   <div class="user-sessions">
-    <%= label_tag 'Электронная почта' %>
+    <%= label_tag 'email' %>
     <%= text_field_tag :email %>
   </div>
 
   <div class="user-sessions">
-    <%= label_tag 'Пароль' %>
+    <%= label_tag 'password' %>
     <%= password_field_tag :password %>
   </div>
 
   <div class="user-sessions">
-    <%= submit_tag 'Войти' %>
+    <%= submit_tag 'Login' %>
   </div>
 
 <% end %>

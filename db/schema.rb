@@ -25,14 +25,4 @@ ActiveRecord::Schema.define(version: 20140817091402) do
     t.integer  "user_id"
   end
 
-  create_table "users", force: true do |t|
-    t.text     "email"
-    t.text     "password"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "salt"
-  end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-
 end
