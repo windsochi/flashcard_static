@@ -28,11 +28,11 @@ class UsersController < ApplicationController
   end
 
   def update
-      if @user.update(user_params)
-        redirect_to(cards_path, notice: 'Пользователь обновлён.')
-      else
-        render 'edit'
-      end
+    if @user.update(user_params)
+      redirect_to(cards_path, notice: 'Пользователь обновлён.')
+    else
+      render 'edit'
+    end
   end
 
   def destroy
