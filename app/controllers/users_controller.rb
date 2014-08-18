@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
   def update
       if @user.update(user_params)
-        redirect_to(users_path, notice: 'Пользователь обновлён.')
+        redirect_to(cards_path, notice: 'Пользователь обновлён.')
       else
         render 'edit'
       end
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to users_path
+    redirect_to cards_path
   end
 
   private
