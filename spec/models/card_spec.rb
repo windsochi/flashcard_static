@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Card do
 
   before do
-    @card = Card.create!(original_text: "House", translated_text: "Дом", review_date: Time.now - 3.days, user_id: "1")
+    @user = User.create!(email: "windsochi@gmail.com", password: "12345", password_confirmation: "12345")
+    @card = Card.create!(original_text: "House", translated_text: "Дом", review_date: Time.now - 3.days, user_id: @user.id)
   end
 
   it "doesn't permit invalid translation" do
