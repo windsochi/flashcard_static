@@ -3,8 +3,10 @@ require 'rails_helper'
 describe "Homepage" do
 
   let!(:card) { FactoryGirl.create(:card) }
+  let!(:user) { FactoryGirl.create(:user) }
 
   before :each do
+    login_user_post("windsochi@gmail.com", "12345")
     visit root_path
   end
 
