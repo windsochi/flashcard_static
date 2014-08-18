@@ -1,13 +1,15 @@
-describe "Integration Test" do
-  let!(:user) { Fabricate(:user) }
+require 'rails_helper'
 
-  before(:each) do
-    login_user_post("admin", "admin")
+describe "Login user" do
+
+  let!(:user) { FactoryGirl.create(:user) }
+
+  it "should be able login for user" do
+    visit login_path
+    fill_in 'email', with: user.email
+    fill_in 'password', with: '12345'
+    click_button('Login')
+    expect(page).to have_content 'Вход выполнен'
   end
 
-  context "when I visit a page" do
-    it "show awesome things" do
-      #Test stuff
-    end
-  end
 end
