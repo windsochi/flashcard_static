@@ -6,7 +6,10 @@ describe "Homepage" do
   let!(:user) { FactoryGirl.create(:user) }
 
   before :each do
-    login_user_post("windsochi@gmail.com", "12345")
+    visit login_path
+    fill_in 'email', with: "windsochi@gmail.com"
+    fill_in 'password', with: '12345'
+    click_button('Login')
     visit root_path
   end
 
