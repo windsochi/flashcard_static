@@ -10,7 +10,7 @@ class UserSessionsController < ApplicationController
       redirect_back_or_to(:users, notice: 'Вход выполнен')
     else
       flash.now[:alert] = 'Вход не выполнен'
-      render action: 'new'
+      render :new
     end
   end
 
