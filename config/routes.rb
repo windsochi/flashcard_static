@@ -5,10 +5,8 @@ FlashcardStatic::Application.routes.draw do
   resources :users
 
   post 'reviews', to: 'reviews#create'
-  get 'login' => 'user_sessions#new', :as => :login
-  post 'logout' => 'user_sessions#destroy', :as => :logout
-  get "user_sessions/new"
+  get 'login', to: 'user_sessions#new'
+  post 'logout', to: 'user_sessions#destroy'
   get "user_sessions/create"
-  get "user_sessions/destroy"
 
 end
