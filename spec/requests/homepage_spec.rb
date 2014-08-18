@@ -2,8 +2,9 @@ require 'rails_helper'
 
 describe "Homepage" do
 
+  let!(:card) { FactoryGirl.create(:card) }
+
   before :each do
-    FactoryGirl.create(:card, original_text: "Helicopter", translated_text: "Вертолет")
     visit root_path
   end
 

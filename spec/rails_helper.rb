@@ -17,5 +17,15 @@ RSpec.configure do |config|
   config.include Capybara::DSL
   config.include FactoryGirl::Syntax::Methods
   config.include Sorcery::TestHelpers::Rails::Controller, type: :controller
-  config.include Sorcery::TestHelpers::Rails::Integration, type: :feature
+  config.include Sorcery::TestHelpers::Rails
+end
+
+module Sorcery
+  module TestHelpers
+    module Rails
+      def login_user_post(email, password)
+        page.driver.post(user_sessions_url, { email: email, password: password})
+      end
+    end
+  end
 end
