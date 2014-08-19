@@ -16,6 +16,10 @@
   </p>
 
   <p>
+    <%= f.hidden_field :user_id, value: current_user.id.to_i %>
+  </p>
+
+  <p>
     <%= f.button :submit, 'Создать' %>
   </p>
 

@@ -18,13 +18,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-      if @user.save
-          if login(@user.email, params[:user][:password], false)
-            redirect_to(cards_path, notice: 'Пользователь создан')
-          end
-      else
-        render 'new'
+    if @user.save
+      if auto_login(@user)
+        redirect_to(cards_path, notice: 'Пользователь создан')
       end
+    else
+      redirect_to(new_user_path, alert: 'Пользователь не создан')
+    end
   end
 
   def update
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to cards_path
+    redirect_to(users_path, notice: 'Пользователь удалён.')
   end
 
   private
