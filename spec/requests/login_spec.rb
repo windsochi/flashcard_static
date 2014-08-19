@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-describe "Login user" do
+describe "Login" do
 
-  let!(:user) { FactoryGirl.create(:user) }
+  let!(:user) { create(:user) }
 
-  it "should be able login for user" do
+  it "should be able to add card" do
     visit login_path
-    fill_in 'email', with: user.email
+    fill_in 'email', with: "windsochi@gmail.com"
     fill_in 'password', with: '12345'
     click_button('Login')
     expect(page).to have_content 'Вход выполнен'

@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe "Managing cards" do
 
-  let!(:card) { FactoryGirl.create(:card) }
-  let!(:user) { FactoryGirl.create(:user) }
+  let!(:user) { create(:user) }
+  let!(:card) { create(:card, user_id: user.id) }
 
   it "should be able to add card" do
     visit login_path

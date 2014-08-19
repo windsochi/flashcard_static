@@ -2,8 +2,9 @@ require 'rails_helper'
 
 describe "Homepage" do
 
-  let!(:card) { FactoryGirl.create(:card) }
-  let!(:user) { FactoryGirl.create(:user) }
+  let!(:user) { create(:user) }
+  let!(:card) { create(:card, user_id: user.id) }
+  let!(:card1) { create(:card, user_id: user.id) }
 
   before :each do
     visit login_path
