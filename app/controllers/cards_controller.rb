@@ -2,7 +2,7 @@ class CardsController < ApplicationController
   before_action :find_card, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cards = current_user.cards.due(Time.now)
+    @cards = current_user.cards
   end
 
   def new
