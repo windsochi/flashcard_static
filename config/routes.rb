@@ -7,6 +7,5 @@ FlashcardStatic::Application.routes.draw do
   post 'reviews', to: 'reviews#create'
   get 'login', to: 'user_sessions#new'
   post 'logout', to: 'user_sessions#destroy'
-  get "user_sessions/create"
 
 end
