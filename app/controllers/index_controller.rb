@@ -1,7 +1,7 @@
 class IndexController < ApplicationController
 
   def index
-    @random_card = Card.due.first
+    @random_card = current_user.cards.due(Time.now).first
   end
 
 end

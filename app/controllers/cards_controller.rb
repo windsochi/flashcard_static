@@ -2,7 +2,7 @@ class CardsController < ApplicationController
   before_action :find_card, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cards = current_user.cards.due
+    @cards = current_user.cards.due(Time.now)
   end
 
   def new
@@ -10,7 +10,7 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = Card.new(card_params)
+    @card = current_user.cards.new(card_params)
     if @card.save
       redirect_to cards_path
       flash[:notice] = 'Карточка успешно создана'
@@ -45,7 +45,7 @@ class CardsController < ApplicationController
     end
 
     def find_card
-      @card = Card.find(params[:id])
+      @card = current_user.cards.find(params[:id])
     end
 
 end
