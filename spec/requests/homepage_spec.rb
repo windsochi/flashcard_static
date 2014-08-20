@@ -4,13 +4,10 @@ describe "Homepage" do
 
   let!(:user) { create(:user) }
   let!(:card) { create(:card, user_id: user.id) }
-  let!(:card1) { create(:card, user_id: user.id) }
 
   before :each do
     visit login_path
-    fill_in 'email', with: "windsochi@gmail.com"
-    fill_in 'password', with: '12345'
-    click_button('Login')
+    sign_in(user)
     visit root_path
   end
 

@@ -6,9 +6,7 @@ describe "Login" do
 
   it "should be able to add card" do
     visit login_path
-    fill_in 'email', with: "windsochi@gmail.com"
-    fill_in 'password', with: '12345'
-    click_button('Login')
+    sign_in(user)
     expect(page).to have_content 'Вход выполнен'
   end
 

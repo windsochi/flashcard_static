@@ -18,4 +18,5 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Sorcery::TestHelpers::Rails::Controller, type: :controller
   config.include Sorcery::TestHelpers::Rails
+  config.include LoginHelper
 end
