@@ -29,6 +29,7 @@ class CardsController < ApplicationController
   def update
     if @card.update(card_params)
       redirect_to cards_path
+      flash[:notice] = 'Карточка успешно обновлена'
     else
       render 'edit'
     end
