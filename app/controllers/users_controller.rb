@@ -1,13 +1,6 @@
 class UsersController < ApplicationController
-  skip_before_filter :require_login, only: [:index, :new, :create]
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-
-  def index
-    @users = User.all
-  end
-
-  def show
-  end
+  skip_before_filter :require_login, only: [:new, :create]
+  before_action :set_user, only: [:edit, :update, :destroy]
 
   def new
     @user = User.new
@@ -28,7 +21,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to(cards_path, notice: 'Пользователь обновлён.')
+      redirect_to(cards_path, notice: 'Пользователь обновлён')
     else
       render 'edit'
     end
@@ -36,7 +29,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to(users_path, notice: 'Пользователь удалён.')
+    redirect_to(root_path, notice: 'Пользователь обновлён')
   end
 
   private

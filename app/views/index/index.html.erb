@@ -7,8 +7,7 @@
   <%= submit_tag 'Verify' %>
 <% end %>
 
-<p>
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, class: name %>
-  <% end %>
-</p>
+<div>
+  <p id="notice"><%= flash[:success] %></p>
+  <p id="alert"><%= flash[:error] %></p>
+</div>
