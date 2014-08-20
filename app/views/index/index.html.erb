@@ -1,11 +1,18 @@
 <% provide(:title, 'Главная страница') %>
-<b><%= @random_card.original_text %></b>
 
-<%= form_tag reviews_path, method: :post do %>
-  <%= text_field_tag :search %>
-  <%= hidden_field_tag(:card_id, @random_card.id) %>
-  <%= submit_tag 'Verify' %>
+<% if @random_card != nil %>
+  <%= @random_card.original_text %>
+  <%= form_tag reviews_path, method: :post do %>
+    <%= text_field_tag :search %>
+    <%= hidden_field_tag(:card_id, @random_card.id) %>
+    <%= submit_tag 'Verify' %>
+  <% end %>
+<% else %>
+  <p id="alert">Нет карточек</p>
 <% end %>
+
+
+
 
 <div>
   <p id="notice"><%= flash[:success] %></p>

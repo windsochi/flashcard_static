@@ -4,5 +4,4 @@ FactoryGirl.define do
     translated_text "Вертолет"
     review_date Time.now - 4.days
   end
-
 end
