@@ -23,13 +23,13 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to(cards_path, notice: 'Пользователь обновлён')
     else
-      render 'edit'
+      redirect_to(edit_user_path, alert: 'Пользователь не обновлён')
     end
   end
 
   def destroy
     @user.destroy
-    redirect_to(root_path, notice: 'Пользователь обновлён')
+    redirect_to(root_path, notice: 'Пользователь удалён')
   end
 
   private
