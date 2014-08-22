@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   skip_before_filter :require_login, only: [:new, :create]
-  before_action :set_user, only: [:edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update]
 
   def new
     @user = User.new
@@ -27,14 +27,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
-    @user.destroy
-    redirect_to(root_path, notice: 'Пользователь удалён')
-  end
-
   private
     def set_user
-      @user = User.find(params[:id])
+      @user = current_user
     end
 
     def user_params
