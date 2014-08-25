@@ -14,3 +14,7 @@
   <b>Translated text:</b>
   <%= @card.translated_text %>
 </p>
+
+<p>
+  <%= image_tag(@card.picture_url) if @card.picture? %>
+</p>

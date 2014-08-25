@@ -11,6 +11,7 @@ gem 'rails_12factor', '0.0.2'
 gem 'simple_form'
 gem 'sorcery'
 gem 'carrierwave'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'better_errors'

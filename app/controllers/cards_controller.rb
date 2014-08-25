@@ -28,7 +28,7 @@ class CardsController < ApplicationController
 
   def update
     if @card.update(card_params)
-      redirect_to cards_path
+      redirect_to edit_card_path
       flash[:notice] = 'Карточка успешно обновлена'
     else
       render 'edit'
@@ -42,7 +42,7 @@ class CardsController < ApplicationController
 
   private
     def card_params
-      params.require(:card).permit(:review_date, :original_text, :translated_text, :user_id)
+      params.require(:card).permit(:review_date, :original_text, :translated_text, :user_id, :picture, :remove_picture)
     end
 
     def find_card

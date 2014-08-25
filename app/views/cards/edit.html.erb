@@ -15,6 +15,20 @@
   </p>
 
   <p>
+    <%= f.file_field :picture %>
+  </p>
+
+  <% if @card.picture? %>
+  <p>
+    <%= f.input :remove_picture, as: :boolean, label: 'Remove picture?' %>
+  </p>
+
+  <p>
+    <%= image_tag(@card.picture_url) %>
+  </p>
+  <% end %>
+
+  <p>
     <%= f.button :submit %>
   </p>
 
