@@ -11,7 +11,7 @@ gem 'rails_12factor', '0.0.2'
 gem 'simple_form'
 gem 'sorcery'
 gem 'carrierwave'
-gem 'rmagick'
+gem 'rmagick', :require => 'RMagick'
 
 group :development, :test do
   gem 'better_errors'
