@@ -1,6 +1,6 @@
 class PictureUploader < CarrierWave::Uploader::Base
 
-  include CarrierWave::MiniMagick
+  include CarrierWave::RMagick
   storage :file
   process :resize_to_fit => [360, 360]
 
