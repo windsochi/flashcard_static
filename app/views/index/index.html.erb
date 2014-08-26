@@ -1,6 +1,7 @@
 <% provide(:title, 'Главная страница') %>
 
 <% if @random_card %>
+  <%= image_tag(@random_card.picture_url) %>
   <%= @random_card.original_text %>
   <%= form_tag reviews_path, method: :post do %>
     <%= text_field_tag :search %>
