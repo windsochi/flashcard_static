@@ -1,7 +1,7 @@
 class PictureUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::RMagick
-  storage :file
+  storage :fog
   process resize_to_fill: [360, 360]
 
   def store_dir

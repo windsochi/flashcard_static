@@ -12,6 +12,7 @@ gem 'simple_form'
 gem 'sorcery'
 gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'
+gem 'fog'
 
 group :development, :test do
   gem 'better_errors'
