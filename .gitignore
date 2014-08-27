@@ -4,6 +4,7 @@
 /log/*.log
 /tmp
 /config/database.yml
+/config/initializers/carrierwave.rb
 doc/
 *.swp
 *~
@@ -13,4 +14,3 @@ doc/
 .idea
 .secret
 /public/uploads/
-/config/initializers/carrierwave.rb
