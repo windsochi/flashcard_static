@@ -4,7 +4,7 @@
 /log/*.log
 /tmp
 /config/database.yml
-/config/initializers/
+/config/initializers/carrierwave.rb
 doc/
 *.swp
 *~
