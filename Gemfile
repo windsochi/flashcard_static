@@ -13,6 +13,7 @@ gem 'sorcery'
 gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'
 gem 'fog'
+gem 'rails_config'
 
 group :development, :test do
   gem 'better_errors'
