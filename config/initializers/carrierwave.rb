@@ -1,6 +1,6 @@
 CarrierWave.configure do |config|
   config.storage = :fog
-  config.fog_directory  = 'fcwindsochieu'
+  config.fog_directory  = Settings.directory
 
   config.fog_credentials = {
     provider: 'AWS',
