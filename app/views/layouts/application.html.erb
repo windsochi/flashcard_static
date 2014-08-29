@@ -19,6 +19,8 @@
         <% else %>
           <li><%= link_to "Регистрация", new_user_path %></li>
           <li><%= link_to "Войти", login_path %></li>
+          <li><%= link_to "Twitter", auth_at_provider_path(provider: :twitter) %></li>
+          <li><%= link_to "Facebook", auth_at_provider_path(provider: :facebook) %></li>
         <% end %>
       </ul>
     </header>
