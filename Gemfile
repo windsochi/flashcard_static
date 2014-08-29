@@ -14,6 +14,7 @@ gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'
 gem 'fog'
 gem 'rails_config'
+gem 'protected_attributes'
 
 group :development, :test do
   gem 'better_errors'
