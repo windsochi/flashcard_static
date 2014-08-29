@@ -8,7 +8,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'pg'
-gem 'rails_12factor', '0.0.2'
 gem 'simple_form'
 gem 'sorcery'
 gem 'carrierwave'
@@ -23,6 +22,10 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+end
+
+group :production do
+  gem 'rails_12factor', '0.0.2'
 end
 
 group :doc do
