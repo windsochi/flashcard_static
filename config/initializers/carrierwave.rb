@@ -1,6 +1,6 @@
 CarrierWave.configure do |config|
 
-  config.fog_directory  = Settings.aws.directory
+  config.fog_directory  = Settings.aws.direct
 
   config.fog_credentials = {
     provider: 'AWS',
