@@ -5,6 +5,7 @@
 /tmp
 /config/database.yml
 /config/settings/development.yml
+/config/settings/test.yml
 doc/
 *.swp
 *~
