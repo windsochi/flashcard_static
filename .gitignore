@@ -4,6 +4,7 @@
 /log/*.log
 /tmp
 /config/database.yml
+config/settings/*.yml
 doc/
 *.swp
 *~

@@ -2,7 +2,6 @@ development:
   directory: 'fcwindsochidev'
   access_key_id: 'AKIAIBBHB37TCVCYD7FQ'
   secret_access_key: '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'
-  region: 'eu-west-1'
 
 test:
   <<: *development
@@ -11,4 +10,3 @@ production:
   directory: 'fcwindsochieu'
   access_key_id: 'AKIAIBBHB37TCVCYD7FQ'
   secret_access_key: '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'
-  region: 'eu-west-1'
