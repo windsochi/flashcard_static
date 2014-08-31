@@ -1,5 +1,5 @@
 require 'yaml'
-module aws
+module FlashcardStaticAWS
   CONFIG_PATH = File.join(Rails.root, 'config/aws.yml')
 
   def self.config
