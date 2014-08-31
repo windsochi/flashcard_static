@@ -1,0 +1,11 @@
+development:
+  s3_direct: <%= ENV['S3_DIRECT'] %>
+  s3_key:    <%= ENV['S3_KEY'] %>
+  s3_secret: <%= ENV['S3_SECRET'] %>
+  s3_region: <%= ENV['S3_REGION'] %>
+
+production:
+  s3_direct: <%= ENV['S3_DIRECT'] %>
+  s3_key:    <%= ENV['S3_KEY'] %>
+  s3_secret: <%= ENV['S3_SECRET'] %>
+  s3_region: <%= ENV['S3_REGION'] %>
