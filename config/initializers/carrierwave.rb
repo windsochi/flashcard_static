@@ -1,11 +1,12 @@
+require 'aws'
 CarrierWave.configure do |config|
 
-  config.fog_directory = AppSettings.S3_DIRECT
+  config.fog_directory = aws.config['directory']
 
   config.fog_credentials = {
     provider: 'AWS',
-    aws_access_key_id: AppSettings.S3_KEY,
-    aws_secret_access_key: AppSettings.S3_SECRET,
-    region: 'eu-west-1'
+    aws_access_key_id: aws.config['access_key_id'],
+    aws_secret_access_key: aws.config['secret_access_key'],
+    region: aws.config['region']
   }
 end
