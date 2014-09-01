@@ -7,23 +7,22 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'pg'
-gem 'simple_form'
-gem 'sorcery'
-gem 'carrierwave'
-gem 'rmagick', :require => 'RMagick'
-gem 'fog'
+gem 'simple_form', '~> 3.0.2'
+gem 'sorcery', '~> 0.8.6'
+gem 'carrierwave', '~> 0.10.0'
+gem 'rmagick', '~> 2.13.3', :require => 'RMagick'
+gem 'fog', '~> 1.23.0'
 
 group :development, :test do
   gem 'better_errors'
-  gem 'debugger'
-  gem 'rspec-rails', '~> 3.0.0'
-  gem 'capybara'
-  gem 'factory_girl_rails'
-  gem 'database_cleaner'
+  gem 'rspec-rails', '~> 3.0.2'
+  gem 'capybara', '~> 2.4.1'
+  gem 'factory_girl_rails', '~> 4.4.1'
+  gem 'database_cleaner', '1.2.0'
 end
 
 group :production do
-  gem 'rails_12factor', '0.0.2'
+  gem 'rails_12factor', '~> 0.0.2'
 end
 
 group :doc do
