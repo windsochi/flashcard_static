@@ -12,7 +12,7 @@ Rails.application.config.sorcery.configure do |config|
   config.twitter.key =           LoadConfigYml.config['twitter_key']
   config.twitter.secret =        LoadConfigYml.config['twitter_secret']
   config.twitter.callback_url =  LoadConfigYml.config['twitter_callback']
-  config.twitter.user_info_mapping = {username: "screen_name"}
+  config.twitter.user_info_mapping = {email: "screen_name"}
 
   config.facebook.key =          LoadConfigYml.config['facebook_key']
   config.facebook.secret =       LoadConfigYml.config['facebook_secret']
@@ -22,5 +22,6 @@ Rails.application.config.sorcery.configure do |config|
 
   config.user_config do |user|
     user.authentications_class = Authentication
+    user.username_attribute_names = [:email]
   end
 end
