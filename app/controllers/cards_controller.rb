@@ -37,7 +37,7 @@ class CardsController < ApplicationController
 
   def destroy
     @card.destroy
-    redirect_to(cards_path, notice: 'Карточка удалена')
+    redirect_to cards_path, notice: 'Карточка удалена'
   end
 
   private
