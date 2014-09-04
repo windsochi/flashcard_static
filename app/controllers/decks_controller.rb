@@ -21,6 +21,7 @@ class DecksController < ApplicationController
     else
       render 'new'
       flash[:alert] = 'Колода не создана'
+    end
   end
 
   def edit
@@ -32,6 +33,7 @@ class DecksController < ApplicationController
       flash[:notice] = 'Колода успещно обновлена'
     else
       render 'edit'
+    end
   end
 
   def destroy
@@ -50,3 +52,4 @@ class DecksController < ApplicationController
   end
 
 end
+
