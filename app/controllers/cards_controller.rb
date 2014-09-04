@@ -1,16 +1,18 @@
 class CardsController < ApplicationController
   before_action :find_card, only: [:show, :edit, :update, :destroy]
+  before_action :find_deck, only: [:index, :new, create]
 
   def index
-    @cards = current_user.cards
+    @cards = @deck.cards
   end
 
   def new
-    @card = Card.new
+    @card = @deck.cards.new
   end
 
   def create
     @card = current_user.cards.new(card_params)
+    @card = @deck.cards.create(card_params.merge(user_id: current_user.id))
     if @card.save
       redirect_to cards_path
       flash[:notice] = 'Карточка успешно создана'
@@ -37,7 +39,7 @@ class CardsController < ApplicationController
 
   def destroy
     @card.destroy
-    redirect_to cards_path, notice: 'Карточка удалена'
+    redirect_to deck_cards_path(@card.deck_id), notice: 'Карточка удалена'
   end
 
   private
@@ -48,5 +50,9 @@ class CardsController < ApplicationController
     def find_card
       @card = current_user.cards.find(params[:id])
     end
+
+    def find_deck
+    @deck = current_user.decks.find(params[:id])
+  end
 
 end
