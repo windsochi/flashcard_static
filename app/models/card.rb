@@ -1,5 +1,6 @@
 class Card < ActiveRecord::Base
   belongs_to :user
+  belongs_to :deck
   mount_uploader :picture, PictureUploader
   validates :original_text, :translated_text, :user_id, presence: true
   scope :due, -> { where("review_date <= ?", Time.now).order("RANDOM()") }

@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_many :cards
+  has_many :decks
+  belongs_to :current_deck, foreign_key: "current_deck_id"
   authenticates_with_sorcery! do |config|
     config.authentications_class = Authentication
   end
