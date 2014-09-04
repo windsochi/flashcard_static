@@ -2,6 +2,7 @@ FlashcardStatic::Application.routes.draw do
   root 'index#index'
   resources :cards
   resources :users
+  resources :decks
 
   post   'reviews', to: 'reviews#create'
   get    'login',   to: 'user_sessions#new'

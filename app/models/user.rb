@@ -17,4 +17,12 @@ class User < ActiveRecord::Base
     @password
   end
 
+  def due_cards
+    if current_deck_id
+      current_deck.cards.due
+    else
+      cards.due
+    end
+  end
+
 end
