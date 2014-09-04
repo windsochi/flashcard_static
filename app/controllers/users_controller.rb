@@ -27,6 +27,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def set_current_deck
+    current_user.update_attribute(:current_deck_id, params[:id])
+    redirect_to(decks_path, notice: 'Колода установлена')
+  end
+
   private
     def set_user
       @user = current_user
