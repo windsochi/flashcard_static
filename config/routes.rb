@@ -1,8 +1,17 @@
 FlashcardStatic::Application.routes.draw do
   root 'index#index'
-  resources :cards
-  resources :users
-  resources :decks
+
+  resources :users do
+    member do
+      put 'set_current_deck'
+    end
+  end
+
+  shallow do
+    resources :decks do
+      resources :cards
+    end
+  end
 
   post   'reviews', to: 'reviews#create'
   get    'login',   to: 'user_sessions#new'
