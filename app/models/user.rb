@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :cards
   has_many :decks
-  has_many :authentications, :dependent => :destroy
+  has_many :authentications, dependent: :destroy
   belongs_to :current_deck, class_name: "Deck", foreign_key: "current_deck_id"
 
   authenticates_with_sorcery! do |config|

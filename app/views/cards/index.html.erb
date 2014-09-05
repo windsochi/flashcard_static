@@ -11,13 +11,13 @@
 
   <% @deck.cards.each do |card| %>
 
-  <tr id="content">
-    <td><%= link_to card.review_date.try(:strftime, "%d.%m.%Y"), card_path(card) %></td>
-    <td><%= card.original_text %> </td>
-    <td><%= card.translated_text %> </td>
-    <td><%= link_to 'Edit', edit_card_path(card) %></td>
-    <td><%= link_to 'Delete', card_path(card), method: :delete, data: { confirm: 'Уверен?' }  %></td>
-  </tr>
+    <tr id="content">
+      <td><%= link_to card.review_date.try(:strftime, "%d.%m.%Y"), card_path(card) %></td>
+      <td><%= card.original_text %> </td>
+      <td><%= card.translated_text %> </td>
+      <td><%= link_to 'Edit', edit_card_path(card) %></td>
+      <td><%= link_to 'Delete', card_path(card), method: :delete, data: { confirm: 'Уверен?' }  %></td>
+    </tr>
 
   <% end %>
 
