@@ -2,6 +2,7 @@
 <h1>Редактирование</h1>
 
 <%= simple_form_for [@deck, @card] do |f| %>
+
   <p>
     <%= f.input :review_date, label: 'Review date:' %>
   </p>
@@ -20,13 +21,13 @@
 
   <% if @card.picture? %>
 
-  <p>
-    <%= f.input :remove_picture, as: :boolean, label: 'Remove picture?' %>
-  </p>
+    <p>
+      <%= f.input :remove_picture, as: :boolean, label: 'Remove picture?' %>
+    </p>
 
-  <p>
-    <%= image_tag(@card.picture_url) %>
-  </p>
+    <p>
+      <%= image_tag(@card.picture_url) %>
+    </p>
 
   <% end %>
 

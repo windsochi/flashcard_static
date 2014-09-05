@@ -16,8 +16,7 @@ class DecksController < ApplicationController
   def create
     @deck = current_user.decks.create(deck_params)
     if @deck.save
-      redirect_to decks_path
-      flash[:notice] = 'Колода успешно создана'
+      redirect_to decks_path, notice: 'Колода успешно создана'
     else
       render 'new'
       flash[:alert] = 'Колода не создана'
@@ -29,8 +28,7 @@ class DecksController < ApplicationController
 
   def update
     if @deck.update(deck_params)
-      redirect_to edit_deck_path
-      flash[:notice] = 'Колода успещно обновлена'
+      redirect_to decks_path, notice: 'Колода успещно обновлена'
     else
       render 'edit'
     end
