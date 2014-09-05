@@ -23,7 +23,9 @@ class OauthsController < ApplicationController
   end
 
   private
+
   def auth_params
     params.permit(:user_id, :provider, :uid)
   end
+
 end
