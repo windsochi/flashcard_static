@@ -15,7 +15,7 @@ class Card < ActiveRecord::Base
   end
 
   def set_review_date
-    self.review_date = Time.now - 4.days
+    self.review_date = Time.now - 1.days
   end
 
 end
