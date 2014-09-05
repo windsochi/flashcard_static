@@ -1,6 +1,7 @@
 <% provide(:title, 'Главная страница') %>
 
 <% if @random_card %>
+  <%= "Колода: #{current_user.current_deck.title}" if current_user.current_deck_id %><br>
   <%= image_tag(@random_card.picture_url) %>
   Карточка: <%= @random_card.original_text %>
   <%= form_tag reviews_path, method: :post do %>
