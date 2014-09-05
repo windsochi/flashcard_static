@@ -11,7 +11,7 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = @deck.cards.create(card_params.merge(user_id: current_user.id))
+    @card = @deck.cards.create(card_params.merge(user: current_user))
     if @card.save
       redirect_to deck_cards_path
       flash[:notice] = 'Карточка успешно создана'
@@ -29,7 +29,7 @@ class CardsController < ApplicationController
 
   def update
     if @card.update(card_params)
-      redirect_to edit_card_path
+      redirect_to deck_cards_path(@card.deck_id)
       flash[:notice] = 'Карточка успешно обновлена'
     else
       render 'edit'
