@@ -1,7 +1,7 @@
 <% content_for(:title, 'Изменение в карточке') %>
 <h1>Редактирование</h1>
 
-<%= simple_form_for :card, url: card_path(@card), method: :patch do |f| %>
+<%= simple_form_for [@deck, @card] do |f| %>
   <p>
     <%= f.input :review_date, label: 'Review date:' %>
   </p>

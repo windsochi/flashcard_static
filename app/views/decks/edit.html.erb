@@ -1,0 +1,14 @@
+<% content_for(:title, 'Изменение в колоде') %>
+<h1>Редактирование</h1>
+
+<%= simple_form_for :deck, url: deck_path(@deck), method: :patch do |f| %>
+
+  <p>
+    <%= f.input :title, label: 'Имя колоды' %>
+  </p>
+
+  <p>
+    <%= f.button :submit %>
+  </p>
+
+<% end %>

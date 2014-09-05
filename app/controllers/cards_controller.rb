@@ -11,10 +11,9 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = current_user.cards.new(card_params)
     @card = @deck.cards.create(card_params.merge(user_id: current_user.id))
     if @card.save
-      redirect_to cards_path
+      redirect_to deck_cards_path
       flash[:notice] = 'Карточка успешно создана'
     else
       render 'new'
@@ -53,7 +52,7 @@ class CardsController < ApplicationController
   end
 
   def find_deck
-    @deck = current_user.decks.find(params[:id])
+    @deck = current_user.decks.find(params[:deck_id])
   end
 
 end

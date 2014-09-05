@@ -6,6 +6,7 @@
     <th></th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
 
   <% @decks.each do |deck| %>
@@ -13,6 +14,7 @@
   <tr id="content">
     <td><%= link_to deck.title, deck_path(deck) %></td>
     <td><%= link_to 'Сделать текущей', set_current_deck_user_path(deck), method: :put %></td>
+    <td><%= link_to 'Добавить карточку', new_deck_card_path(deck) %></td>
     <td><%= link_to 'Edit', edit_deck_path(deck) %></td>
     <td><%= link_to 'Delete', deck_path(deck), method: :delete, data: { confirm: 'Уверен?' }  %></td>
   </tr>

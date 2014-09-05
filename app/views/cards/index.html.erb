@@ -9,7 +9,7 @@
     <th></th>
   </tr>
 
-  <% @cards.each do |card| %>
+  <% @deck.cards.each do |card| %>
 
   <tr id="content">
     <td><%= link_to card.review_date, card_path(card) %></td>
