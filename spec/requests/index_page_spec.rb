@@ -26,9 +26,19 @@ describe "Index page" do
     end
 
     describe "the user has a deck, but no cards" do
-      let(:deck) {FactoryGirl.create(:deck, user_id: user.id)}
+      let!(:deck) {FactoryGirl.create(:deck, user_id: user.id)}
       before {visit root_path}
       it {expect(page).to have_content("Добавьте карточки в колоду")}
+    end
+
+    describe "the user has a deck of cards and checking translation" do
+      let!(:card) {FactoryGirl.create(:card, original_text: "Helicopter", translated_text: "Вертолёт", user_id: user.id)}
+      before(:each) do
+        visit root_path
+        fill_in 'search', with: "Вертолёт"
+        click_button 'Verify'
+      end
+      it {expect(page).to have_content("Correct!")}
     end
 
   end
