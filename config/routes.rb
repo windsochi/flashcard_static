@@ -1,7 +1,7 @@
 FlashcardStatic::Application.routes.draw do
   root 'index#index'
 
-  resources :users do
+  resources :users, except: [:show, :destroy, :index] do
     member do
       put 'set_current_deck'
     end

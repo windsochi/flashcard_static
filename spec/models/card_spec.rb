@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Card do
+describe Card do
 
   before do
     @user = User.create!(email: "windsochi@gmail.com", password: "12345", password_confirmation: "12345")

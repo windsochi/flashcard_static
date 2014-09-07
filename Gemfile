@@ -19,6 +19,7 @@ group :development, :test do
   gem 'capybara', '~> 2.4.1'
   gem 'factory_girl_rails', '~> 4.4.1'
   gem 'database_cleaner', '1.2.0'
+  gem 'rails_best_practices'
 end
 
 group :production do

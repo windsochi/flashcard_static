@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
 
   def create
     if login(params[:email], params[:password])
-      redirect_to(cards_path, notice: 'Вход выполнен')
+      redirect_to(decks_path, notice: 'Вход выполнен')
     else
       flash.now[:alert] = 'Вход не выполнен'
       render :new

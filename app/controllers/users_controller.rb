@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       auto_login(@user)
-      redirect_to cards_path, notice: 'Пользователь создан'
+      redirect_to decks_path, notice: 'Пользователь создан'
     else
       redirect_to new_user_path, alert: 'Пользователь не создан'
     end

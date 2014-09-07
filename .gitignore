@@ -13,3 +13,5 @@ doc/
 .idea
 .secret
 /public/uploads/
+.ruby-gemset*
+.ruby-version*

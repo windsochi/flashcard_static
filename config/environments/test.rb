@@ -17,4 +17,8 @@ FlashcardStatic::Application.configure do
   config.action_mailer.delivery_method = :test
 
   config.active_support.deprecation = :stderr
+
+  config.logger = Logger.new(STDOUT)
+  config.logger.level = Logger::ERROR
+
 end
