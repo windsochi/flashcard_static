@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to cards_path, notice: 'Пользователь обновлён'
+      redirect_to decks_path, notice: 'Пользователь обновлён'
     else
       redirect_to edit_user_path, alert: 'Пользователь не обновлён'
     end

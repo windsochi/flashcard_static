@@ -18,8 +18,8 @@ class DecksController < ApplicationController
     if @deck.save
       redirect_to decks_path, notice: 'Колода успешно создана'
     else
-      render 'new'
       flash[:alert] = 'Колода не создана'
+      render :new
     end
   end
 
@@ -30,7 +30,7 @@ class DecksController < ApplicationController
     if @deck.update(deck_params)
       redirect_to decks_path, notice: 'Колода успещно обновлена'
     else
-      render 'edit'
+      render :edit
     end
   end
 
