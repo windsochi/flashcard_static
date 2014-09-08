@@ -1,24 +1,15 @@
-<% content_for(:title, 'Вход в систему') %>
-<%= form_tag login_path, method: :post do %>
-
-  <div class="user-sessions">
-    <%= label_tag 'email' %>
-    <%= text_field_tag :email %>
-  </div>
-
-  <div class="user-sessions">
-    <%= label_tag 'password' %>
-    <%= password_field_tag :password %>
-  </div>
-
-  <div class="user-sessions">
-    <%= submit_tag 'Login' %>
-  </div>
-
-<% end %>
-
-<%= link_to 'Login with Github', auth_at_provider_path(provider: :github) %>
-<br>
-<%= link_to 'Login with Twitter', auth_at_provider_path(provider: :twitter) %>
-<br>
-<%= link_to 'Login with Facebook', auth_at_provider_path(provider: :facebook) %>
+- content_for(:title, 'Вход в систему')
+= form_tag login_path, method: :post do
+  .user-sessions
+    = label_tag 'email'
+    = text_field_tag :email
+  .user-sessions
+    = label_tag 'password'
+    = password_field_tag :password
+  .user-sessions
+    = submit_tag 'Login'
+= link_to 'Login with Github', auth_at_provider_path(provider: :github)
+br
+= link_to 'Login with Twitter', auth_at_provider_path(provider: :twitter)
+br
+= link_to 'Login with Facebook', auth_at_provider_path(provider: :facebook)
