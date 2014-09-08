@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title
+      | Флэшкарточкер | #{yield(:title)}
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  body
+    section#container
+      header.clearfix
+        h1= link_to 'Флэшкарточкер', root_path
+        ul.navigation-links
+          - if current_user
+            li= link_to 'Все колоды', decks_path
+            li= link_to 'Добавить колоду', new_deck_path
+            li= link_to "Изменить профиль", edit_user_path(current_user.id)
+            li= link_to "Выйти", logout_path, method: :delete
+          - else
+            li= link_to "Регистрация", new_user_path
+            li= link_to "Войти", login_path
+      div
+        p#notice= flash[:notice]
+        p#alert= flash[:alert]
+      section
+        = yield
