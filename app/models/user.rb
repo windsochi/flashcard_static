@@ -19,11 +19,7 @@ class User < ActiveRecord::Base
   end
 
   def due_cards
-    if current_deck_id
-      current_deck.cards.due
-    else
-      cards.due
-    end
+    current_deck ? current_deck.cards.due : cards.due
   end
 
 end
