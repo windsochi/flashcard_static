@@ -1,0 +1,18 @@
+- content_for(:title, 'Все колоды')
+
+table#cards
+  tr#top
+    th Колода
+    th
+    th
+    th
+    th
+
+  - @decks.each do |deck|
+
+    tr#content
+      td = link_to deck.title, deck_path(deck)
+      td = link_to 'Сделать текущей', set_current_deck_user_path(deck), method: :put
+      td = link_to 'Добавить карточку', new_deck_card_path(deck)
+      td = link_to 'Edit', edit_deck_path(deck)
+      td = link_to 'Delete', deck_path(deck), method: :delete, data: { confirm: 'Уверен?' }
