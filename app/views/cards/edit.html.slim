@@ -1,0 +1,16 @@
+- content_for(:title, 'Изменение в карточке')
+h1 Редактирование
+= simple_form_for [@deck, @card] do |f|
+  p
+    = f.input :original_text, label: 'Original text:'
+  p
+    = f.input :translated_text, label: 'Translated text:'
+  p
+    = f.file_field :picture
+  - if @card.picture?
+    p
+      = f.input :remove_picture, as: :boolean, label: 'Remove picture?'
+    p
+      = image_tag(@card.picture_url)
+  p
+    = f.button :submit, data: { disable_with: 'Сохраняется...' }

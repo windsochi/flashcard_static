@@ -1,0 +1,11 @@
+- content_for(:title, 'Новая карточка')
+h1 Новая карточка
+= simple_form_for [@deck, @card] do |f|
+  p
+    = f.input :original_text, label: 'Original text'
+  p
+    = f.input :translated_text, label: 'Translated text'
+  p
+    = f.file_field :picture
+  p
+    = f.button :submit, data: { disable_with: 'Сохраняется...' }

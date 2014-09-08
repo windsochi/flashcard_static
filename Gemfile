@@ -12,6 +12,7 @@ gem 'sorcery', '~> 0.8.6'
 gem 'carrierwave', '~> 0.10.0'
 gem 'rmagick', '~> 2.13.3', :require => 'RMagick'
 gem 'fog', '~> 1.23.0'
+gem 'slim-rails'
 
 group :development, :test do
   gem 'better_errors'
