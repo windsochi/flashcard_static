@@ -1,0 +1,15 @@
+- provide(:title, 'Главная страница')
+- if @random_card
+  = "Колода: #{current_user.current_deck.title}" if current_user.current_deck_id
+  br
+    = image_tag(@random_card.picture_url)
+    | Карточка: #{@random_card.original_text}
+    | \#{form_tag reviews_path, method: :post do}
+      = text_field_tag :search
+      = hidden_field_tag(:card_id, @random_card.id)
+      = submit_tag 'Verify'
+- else
+  p#alert Нет карточек
+div
+  p#notice= flash[:success]
+  p#alert= flash[:error]
