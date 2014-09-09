@@ -11,8 +11,8 @@ table#cards
   - @deck.cards.each do |card|
 
     tr#content
-      td= link_to card.review_date.try(:strftime, "%d.%m.%Y"), card_path(card)
-      td= card.original_text
+      td= card.review_date.try(:strftime, "%d.%m.%Y")
+      td= link_to card.original_text, card_path(card)
       td= card.translated_text
       td= link_to 'Edit', edit_card_path(card)
       td= link_to 'Delete', card_path(card), method: :delete, data: { confirm: 'Уверен?' }
