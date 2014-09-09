@@ -1,10 +1,11 @@
 - content_for(:title, 'Новая карточка')
 h1 Новая карточка
+
 = simple_form_for [@deck, @card] do |f|
   p
-    = f.input :original_text, label: 'Original text'
+    = f.input :original_text, as: :string, label: 'Original text'
   p
-    = f.input :translated_text, label: 'Translated text'
+    = f.input :translated_text, as: :string, label: 'Translated text'
   p
     = f.file_field :picture
   p
