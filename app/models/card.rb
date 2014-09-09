@@ -7,11 +7,17 @@ class Card < ActiveRecord::Base
   scope :due, -> { where("review_date <= ?", Time.now).order("RANDOM()") }
 
   def check_translation(translation)
-    translation == translated_text
+    if translation == translated_text
+      correct_answer
+      return true
+    else
+      incorrect_answer
+      return false
+    end
   end
 
   def update_review_date
-    update_attributes(review_date: Time.now + 3.days)
+    update_attributes(:review_date, calculation_time_to_update)
   end
 
   def correct_answer
@@ -31,7 +37,24 @@ class Card < ActiveRecord::Base
     end
   end
 
+  def calculation_time_to_update
+    case number_correct_answers
+    when 0
+      Time.now
+    when 1
+      Time.now + 12.hour
+    when 2
+      Time.now + 3.day
+    when 3
+      Time.now + 1.week
+    when 4
+      Time.now + 2.week
+    else
+      update_attribute(:number_correct_ansers, 5)
+      Time.now + 1.month
+    end
   end
+
   def set_review_date
     self.review_date = Time.now
   end
