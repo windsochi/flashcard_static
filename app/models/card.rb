@@ -17,7 +17,7 @@ class Card < ActiveRecord::Base
   end
 
   def update_review_date
-    update_attributes(:review_date, calculation_time_to_update)
+    update_attribute(:review_date, calculation_time_to_update)
   end
 
   def correct_answer
@@ -50,7 +50,7 @@ class Card < ActiveRecord::Base
     when 4
       Time.now + 2.week
     else
-      update_attribute(:number_correct_ansers, 5)
+      update_attribute(:number_correct_answers, 5)
       Time.now + 1.month
     end
   end
