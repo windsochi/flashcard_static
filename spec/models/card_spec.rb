@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Card do
 
-  describe ".check_translation" do
+  describe "#check_translation" do
     let!(:user) { FactoryGirl.create :user }
     let!(:card) { FactoryGirl.create :card }
 
@@ -15,7 +15,7 @@ describe Card do
     end
   end
 
-  describe ".give_correct_answer" do
+  describe "#give_correct_answer" do
     let!(:user) { FactoryGirl.create :user }
 
     before(:each) do
@@ -61,7 +61,7 @@ describe Card do
 
   end
 
-  describe ".give_incorrect_answer" do
+  describe "#give_incorrect_answer" do
     let!(:user) { FactoryGirl.create :user }
 
     before(:each) do
