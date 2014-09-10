@@ -24,35 +24,35 @@ describe Card do
       card.give_correct_answer
     end
 
-    describe 'when field correct_answers_counter eq 1' do
+    context 'when field correct_answers_counter eq 1' do
       let(:card) { FactoryGirl.create :card, correct_answers_counter: 0, review_date: Time.now }
       it { expect(card.correct_answers_counter).to eq 1 }
       it { expect(card.incorrect_answers_counter).to eq 0 }
       it { expect(card.review_date).to eq Time.now + 12.hour }
     end
 
-    describe 'when field correct_answers_counter eq 2' do
+    context 'when field correct_answers_counter eq 2' do
       let(:card) { FactoryGirl.create :card, correct_answers_counter: 1, review_date: Time.now }
       it { expect(card.correct_answers_counter).to eq 2 }
       it { expect(card.incorrect_answers_counter).to eq 0 }
       it { expect(card.review_date).to eq Time.now + 3.day }
     end
 
-    describe 'when field correct_answers_counter eq 3' do
+    context 'when field correct_answers_counter eq 3' do
       let(:card) { FactoryGirl.create :card, correct_answers_counter: 2, review_date: Time.now }
       it { expect(card.correct_answers_counter).to eq 3 }
       it { expect(card.incorrect_answers_counter).to eq 0 }
       it { expect(card.review_date).to eq Time.now + 1.week }
     end
 
-    describe 'when field correct_answers_counter eq 4' do
+    context 'when field correct_answers_counter eq 4' do
       let(:card) { FactoryGirl.create :card, correct_answers_counter: 3, review_date: Time.now }
       it { expect(card.correct_answers_counter).to eq 4 }
       it { expect(card.incorrect_answers_counter).to eq 0 }
       it { expect(card.review_date).to eq Time.now + 2.week }
     end
 
-    describe 'when field correct_answers_counter eq 5' do
+    context 'when field correct_answers_counter eq 5' do
       let(:card) { FactoryGirl.create :card, correct_answers_counter: 4, review_date: Time.now }
       it { expect(card.correct_answers_counter).to eq 5 }
       it { expect(card.incorrect_answers_counter).to eq 0 }
@@ -70,14 +70,14 @@ describe Card do
       card.give_incorrect_answer
     end
 
-    describe 'when field incorrect_answers_counter > 3' do
+    context 'when field incorrect_answers_counter > 3' do
       let(:card) { FactoryGirl.create :card, incorrect_answers_counter: 3, review_date: Time.now }
       it { expect(card.correct_answers_counter).to eq 0 }
       it { expect(card.incorrect_answers_counter).to eq 0 }
       it { expect(card.review_date).to eq Time.now }
     end
 
-    describe 'when field incorrect_answers_counter eq 1' do
+    context 'when field incorrect_answers_counter eq 1' do
       let(:card) { FactoryGirl.create :card, incorrect_answers_counter: 1, correct_answers_counter: 1, review_date: Time.now }
       it { expect(card.correct_answers_counter).to eq 0 }
       it { expect(card.incorrect_answers_counter).to eq 0 }
