@@ -27,13 +27,17 @@ describe Card do
     before(:each) do
       time = Time.parse("09-09-2014")
       allow(Time).to receive(:now) { time }
-      card.correct_answer
+      card.give_correct_answer
     end
 
     describe "in order to number correct answer eq 0" do
-      it {expect(card.review_date).to eq (Time.now + 12.hour)}
-      it {expect(card.number_correct_answers).to eq 1}
-      it {expect(card.number_incorrect_answers).to eq 0}
+
+      describe "correct answer 1"
+        it {expect(card.review_date).to eq (Time.now + 12.hour)}
+        it {expect(card.number_correct_answers).to eq 1}
+        it {expect(card.number_incorrect_answers).to eq 0}
+      end
+
     end
 
   end

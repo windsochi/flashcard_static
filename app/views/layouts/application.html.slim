@@ -20,7 +20,7 @@ html
             li= link_to "Регистрация", new_user_path
             li= link_to "Войти", login_path
       div
-        p#notice= flash[:notice]
-        p#alert= flash[:alert]
+        - flash.each do |key, value|
+          p id=("#{key}msg") = value
       section
         = yield

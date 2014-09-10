@@ -8,10 +8,10 @@ class Card < ActiveRecord::Base
 
   def check_translation(translation)
     if translation == translated_text
-      correct_answer
+      give_correct_answer
       return true
     else
-      incorrect_answer
+      give_incorrect_answer
       return false
     end
   end
@@ -20,13 +20,13 @@ class Card < ActiveRecord::Base
     update_attribute(:review_date, calculation_time_to_update)
   end
 
-  def correct_answer
+  def give_correct_answer
     increment(:number_correct_answers)
     update_attribute(:number_incorrect_answers, 0)
     update_review_date
   end
 
-  def incorrect_answer
+  def give_incorrect_answer
     if number_incorrect_answers > 3
       increment(:number_incorrect_answers)
       save
