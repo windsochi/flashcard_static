@@ -17,28 +17,28 @@ class Card < ActiveRecord::Base
   end
 
   def update_review_date
-    update_attribute(:review_date, calculation_time_to_update)
+    update_attribute(:review_date, calculate_time_to_update)
   end
 
   def give_correct_answer
-    increment(:number_correct_answers)
-    update_attribute(:number_incorrect_answers, 0)
+    increment(:correct_answers_counter)
+    update_attribute(:incorrect_answers_counter, 0)
     update_review_date
   end
 
   def give_incorrect_answer
-    if number_incorrect_answers > 3
-      increment(:number_incorrect_answers)
+    if incorrect_answers_counter > 3
+      increment(:incorrect_answers_counter)
       save
     else
-      decrement(:number_correct_answers) if number_correct_answers > 0
-      update_attribute(:number_incorrect_answers, 0)
+      decrement(:correct_answers_counter) if correct_answers_counter > 0
+      update_attribute(:incorrect_answers_counter, 0)
       update_review_date
     end
   end
 
-  def calculation_time_to_update
-    case number_correct_answers
+  def calculate_time_to_update
+    case correct_answers_counter
     when 0
       Time.now
     when 1
@@ -50,7 +50,7 @@ class Card < ActiveRecord::Base
     when 4
       Time.now + 2.week
     else
-      update_attribute(:number_correct_answers, 5)
+      update_attribute(:correct_answers_counter, 5)
       Time.now + 1.month
     end
   end

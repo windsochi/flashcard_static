@@ -34,8 +34,8 @@ describe Card do
 
       describe "correct answer 1"
         it {expect(card.review_date).to eq (Time.now + 12.hour)}
-        it {expect(card.number_correct_answers).to eq 1}
-        it {expect(card.number_incorrect_answers).to eq 0}
+        it {expect(card.correct_answers_counter).to eq 1}
+        it {expect(card.incorrect_answers_counter).to eq 0}
       end
 
     end
