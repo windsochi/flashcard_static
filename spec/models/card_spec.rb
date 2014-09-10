@@ -1,43 +1,61 @@
 require 'rails_helper'
 
 describe Card do
+  it { should belong_to(:user) }
+  it { should belong_to(:deck) }
+  it { should validate_presence_of :original_text }
+  it { should validate_presence_of :translated_text }
+  it { should validate_presence_of :user_id }
 
-  let(:user) {FactoryGirl.create(:user, email: "windsochi@gmail.com",
-                                        password: "12345",
-                                        password_confirmation: "12345")}
-  let(:card) {FactoryGirl.create(:card, original_text: "House",
-                                        translated_text: "Дом",
-                                        user_id: user.id,
-                                        review_date: Time.now,
-                                        number_correct_answers: 0,
-                                        number_incorrect_answers: 0)}
+  describe ".check_translation" do
+    let!(:user) { FactoryGirl.create :user }
+    let!(:card) { FactoryGirl.create :card }
 
-  describe "check translation" do
-    it "doesn't permit invalid translation" do
-      expect(card.check_translation("Домик")).to be false
+    context 'when translation invalid' do
+      it { expect(card.check_translation("Яблочко")).to be false }
     end
 
-    it "permits valid translation" do
-      expect(card.check_translation("Дом")) == (card.translated_text)
+    context 'when translation valid' do
+      it { expect(card.check_translation("Яблоко")) == card.translated_text }
     end
   end
 
-  describe "update review date" do
+  describe ".give_correct_answer" do
+    let!(:user) { FactoryGirl.create :user }
+    let!(:card) { FactoryGirl.create :card }
 
-    before(:each) do
-      time = Time.parse("09-09-2014")
-      allow(Time).to receive(:now) { time }
+    before do
       card.give_correct_answer
     end
 
-    describe "in order to number correct answer eq 0" do
+    describe 'when field correct_answers_counter eq 1' do
+      it { expect(card.correct_answers_counter) == 1 }
+      it { expect(card.incorrect_answers_counter) == 0 }
+      it { expect(card.review_date) == Time.now + 12.hour }
+    end
 
-      describe "correct answer 1"
-        it {expect(card.review_date).to eq (Time.now + 12.hour)}
-        it {expect(card.correct_answers_counter).to eq 1}
-        it {expect(card.incorrect_answers_counter).to eq 0}
-      end
+    describe 'when field correct_answers_counter eq 2' do
+      it { expect(card.correct_answers_counter) == 2 }
+      it { expect(card.incorrect_answers_counter) == 0 }
+      it { expect(card.review_date) == Time.now + 3.day }
+    end
 
+    describe 'when field correct_answers_counter eq 3' do
+      it { expect(card.correct_answers_counter) == 3 }
+      it { expect(card.incorrect_answers_counter) == 0 }
+      it { expect(card.review_date) == Time.now + 1.week }
+    end
+
+    describe 'when field correct_answers_counter eq 4' do
+      it { expect(card.correct_answers_counter) == 4 }
+      it { expect(card.incorrect_answers_counter) == 0 }
+      it { expect(card.review_date) == Time.now + 2.week }
+    end
+
+    describe 'when field correct_answers_counter eq 5' do
+      it { expect(card.correct_answers_counter) == 5 }
+      it { expect(card.incorrect_answers_counter) == 0 }
+      it { expect(card.review_date) == Time.now + 1.month }
     end
 
   end

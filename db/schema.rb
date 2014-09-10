@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20140909081121) do
   end
 
   add_index "cards", ["deck_id"], name: "index_cards_on_deck_id", using: :btree
+  add_index "cards", ["user_id"], name: "index_cards_on_user_id", using: :btree
 
   create_table "decks", force: true do |t|
     t.string   "title"

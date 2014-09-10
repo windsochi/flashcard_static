@@ -1,9 +1,11 @@
 FactoryGirl.define do
   factory :card do
-    original_text "Helicopter"
-    translated_text "Вертолет"
-    review_date Time.now - 4.days
+    original_text "Apple"
+    translated_text "Яблоко"
+    review_date Time.now
     user_id "1"
     deck_id "1"
+    correct_answers_counter 0
+    incorrect_answers_counter 0
   end
 end

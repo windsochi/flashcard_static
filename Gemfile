@@ -22,6 +22,7 @@ group :development, :test do
   gem 'database_cleaner', '1.2.0'
   gem 'rails_best_practices'
   gem 'launchy'
+  gem 'shoulda-matchers'
 end
 
 group :production do
