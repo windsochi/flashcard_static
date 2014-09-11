@@ -15,13 +15,13 @@ describe Card do
     end
   end
 
-  describe "#give_correct_answer" do
+  describe "#processing_correct_answer" do
     let!(:user) { FactoryGirl.create :user }
 
     before(:each) do
       t = Time.parse("10-09-2014")
       allow(Time).to receive(:now) { t }
-      card.give_correct_answer
+      card.processing_correct_answer
     end
 
     context 'when field correct_answers_counter eq 1' do
@@ -61,13 +61,13 @@ describe Card do
 
   end
 
-  describe "#give_incorrect_answer" do
+  describe "#processing_incorrect_answer" do
     let!(:user) { FactoryGirl.create :user }
 
     before(:each) do
       t = Time.parse("10-09-2014")
       allow(Time).to receive(:now) { t }
-      card.give_incorrect_answer
+      card.processing_incorrect_answer
     end
 
     context 'when field incorrect_answers_counter > 3' do
