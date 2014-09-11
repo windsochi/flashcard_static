@@ -2,8 +2,22 @@ p.f1 {
   font-size: 22px;
 }
 section {
-  img {
-    float: right;
-    margin: 0 145px 0 0;
+  .h3 {
+    text-align: center;
   }
+  img {
+    margin: 0 auto;
+  }
+}
+#noticemsg {
+  color: green;
+}
+#successmsg {
+  color: green;
+}
+#alertmsg {
+  color: red;
+}
+#alert {
+  color: red;
 }
