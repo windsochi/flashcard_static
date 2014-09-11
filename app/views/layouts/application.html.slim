@@ -13,7 +13,6 @@ html
         ul.navigation-links
           - if current_user
             li= link_to 'Все колоды', decks_path
-            li= link_to 'Добавить колоду', new_deck_path
             li= link_to "Изменить профиль", edit_user_path(current_user.id)
             li= link_to "Выйти", logout_path, method: :delete
           - else

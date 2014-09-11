@@ -1,21 +1,20 @@
 - content_for(:title, 'Все карточки')
 
-table#cards
-  tr#top
-    th Review date
-    th Original
-    th Translate
+table.table.table-hover
+  tr
+    th Дата пересмотра
+    th Слово
+    th Перевод
     th
     th
 
   - @deck.cards.each do |card|
 
-    tr#content
+    tr
       td= card.review_date.try(:strftime, "%d.%m.%Y")
       td= link_to card.original_text, card_path(card)
       td= card.translated_text
-      td= link_to 'Edit', edit_card_path(card)
-      td= link_to 'Delete', card_path(card), method: :delete, data: { confirm: 'Уверен?' }
-
+      td= link_to 'Изменить', edit_card_path(card)
+      td= link_to 'Удалить', card_path(card), method: :delete, data: { confirm: 'Уверен?' }
 br
-  = link_to 'Добавить карточку', new_deck_card_path
+= button_to 'Добавить карточку', new_deck_card_path, method: :get, :class => "btn btn-primary"

@@ -1,16 +1,21 @@
 - content_for(:title, 'Изменение в карточке')
-h1 Редактирование
-= simple_form_for [@deck, @card] do |f|
-  p
-    = f.input :original_text, label: 'Original text:'
-  p
-    = f.input :translated_text, label: 'Translated text:'
-  p
-    = f.file_field :picture
-  - if @card.picture?
-    p
-      = f.input :remove_picture, as: :boolean, label: 'Remove picture?'
-    p
-      = image_tag(@card.picture_url)
-  p
-    = f.button :submit, data: { disable_with: 'Сохраняется...' }
+.row
+  .col-md-6.col-md-offset-3
+    .panel.panel-default
+      .panel-heading
+        .h1.panel-title Редактирование карточки
+      .panel-body
+        = simple_form_for [@deck, @card] do |f|
+          p
+            = f.input :original_text, as: :string, label: 'Original text:', input_html: { class: 'form-control' }
+          p
+            = f.input :translated_text, as: :string, label: 'Translated text:', input_html: { class: 'form-control' }
+          p
+            = f.file_field :picture
+          - if @card.picture?
+            p
+              = f.input :remove_picture, as: :boolean, label: 'Remove picture?'
+            p
+              = image_tag(@card.picture_url)
+          p
+            = f.button :submit, data: { disable_with: 'Сохраняется...' }, class: "btn btn-success btn-lg btn-block", id: "btn-login"

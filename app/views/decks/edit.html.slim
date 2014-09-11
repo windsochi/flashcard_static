@@ -1,9 +1,12 @@
 - content_for(:title, 'Изменение в колоде')
-h1 Редактирование
-
-= simple_form_for @deck do |f|
-
-  p
-    = f.input :title, label: 'Имя колоды'
-  p
-    = f.button :submit, data: { disable_with: 'Сохраняется...' }
+.row
+  .col-md-4.col-md-offset-4
+    .panel.panel-default
+      .panel-heading
+        .h1.panel-title Редактирование колоды
+      .panel-body
+        = simple_form_for @deck do |f|
+          p
+            = f.input :title, label: 'Имя колоды', input_html: { class: 'form-control' }
+          p
+            = f.button :submit, data: { disable_with: 'Сохраняется...' }, class: "btn btn-success btn-lg btn-block", id: "btn-login"

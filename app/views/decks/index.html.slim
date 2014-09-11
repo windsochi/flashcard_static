@@ -1,7 +1,7 @@
 - content_for(:title, 'Все колоды')
 
-table#cards
-  tr#top
+table.table.table-hover
+  tr
     th Колода
     th
     th
@@ -10,9 +10,11 @@ table#cards
 
   - @decks.each do |deck|
 
-    tr#content
+    tr
       td = link_to deck.title, deck_path(deck)
       td = link_to 'Сделать текущей', set_current_deck_user_path(deck), method: :put
       td = link_to 'Добавить карточку', new_deck_card_path(deck)
-      td = link_to 'Edit', edit_deck_path(deck)
-      td = link_to 'Delete', deck_path(deck), method: :delete, data: { confirm: 'Уверен?' }
+      td = link_to 'Изменить', edit_deck_path(deck)
+      td = link_to 'Удалить', deck_path(deck), method: :delete, data: { confirm: 'Уверен?' }
+br
+  = button_to 'Добавить колоду', new_deck_path, method: :get, :class => "btn btn-primary"

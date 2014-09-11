@@ -1,15 +1,19 @@
 - content_for(:title, 'Изменение в учётной записи')
-h1 Редактирование
+.row
+  .col-md-4.col-md-offset-4
+    .panel.panel-default
+      .panel-heading
+        .h1.panel-title Редактирование
+      .panel-body
+        = simple_form_for :user, url: user_path(@user), method: :patch do |f|
 
-= simple_form_for :user, url: user_path(@user), method: :patch do |f|
-
-  p
-    = f.input :email, label: 'Электронная почта:'
-  p
-    = f.input :password, label: 'Пароль:'
-  p
-    = f.input :password_confirmation, label: 'Повторите пароль:'
-  p
-    = f.input :current_deck_id, label: 'Текущая колода'
-  p
-    = f.button :submit, data: { disable_with: 'Сохраняется...' }
+          p
+            = f.input :email, label: 'Электронная почта:', input_html: { class: 'form-control' }
+          p
+            = f.input :password, label: 'Пароль:', input_html: { class: 'form-control' }
+          p
+            = f.input :password_confirmation, label: 'Повторите пароль:', input_html: { class: 'form-control' }
+          p
+            = f.input :current_deck_id, label: 'Текущая колода', input_html: { class: 'form-control' }
+          p
+            = f.button :submit, data: { disable_with: 'Сохраняется...' }, class: "btn btn-success btn-lg btn-block", id: "btn-login"
