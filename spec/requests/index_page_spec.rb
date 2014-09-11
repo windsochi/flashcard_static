@@ -9,15 +9,14 @@ describe "Index page" do
   end
 
   describe "when user login" do
-    let(:user) { FactoryGirl.create(:user) }
+    let!(:user) { FactoryGirl.create(:user) }
     before(:each) do
       visit root_path
-      save_and_open_page
       sign_in(user)
     end
 
     it { expect(page).to have_link("Все колоды", href: decks_path) }
-    it { expect(page).to have_link("Добавить колоду", href: new_deck_path) }
+    it { expect(page).to have_button("Добавить колоду") }
     it { expect(page).to have_link("Изменить профиль", href: edit_user_path(user.id)) }
     it { expect(page).to have_link("Выйти", href: logout_path) }
 
@@ -27,17 +26,18 @@ describe "Index page" do
     end
 
     describe "the user has a deck, but no cards" do
-      let!(:deck) { FactoryGirl.create(:deck, user_id: user.id) }
+      let!(:deck) { FactoryGirl.create :deck, user_id: user.id }
       before { visit root_path }
       it { expect(page).to have_content("Добавьте карточки в колоду") }
     end
 
     describe "the user has a deck of cards and checking translation" do
-      let!(:card) { FactoryGirl.create :card }
+      let!(:deck) { FactoryGirl.create :deck, user_id: user.id }
+      let!(:card) { FactoryGirl.create :card, deck_id: deck.id, user_id: user.id }
       before(:each) do
         visit root_path
-        fill_in 'search', with: "Вертолёт"
-        click_button 'Verify'
+        fill_in 'search', with: "Яблоко"
+        click_button 'Проверить'
       end
       it { expect(page).to have_content("Correct!") }
     end
