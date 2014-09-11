@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 gem 'rails', '4.0.2'
-gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
@@ -13,6 +12,8 @@ gem 'carrierwave', '~> 0.10.0'
 gem 'rmagick', '~> 2.13.3', :require => 'RMagick'
 gem 'fog', '~> 1.23.0'
 gem 'slim-rails'
+gem 'bootstrap-sass'
+gem 'sass-rails', '~> 4.0.0'
 
 group :development, :test do
   gem 'better_errors'
