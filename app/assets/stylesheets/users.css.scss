@@ -40,14 +40,9 @@
   }
 }
 
-form {
-    width: 500px;
-  .user-sessions {
-      height: 40px;
-    }
-  div {
-    input {
-    width: 500px;
-    }
-  }
+#btn-login {
+  margin: 20px 0;
+}
+.links-to-providers {
+  text-align: center;
 }
