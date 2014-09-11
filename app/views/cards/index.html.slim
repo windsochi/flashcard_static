@@ -12,7 +12,7 @@ table.table.table-hover
 
     tr
       td= card.review_date.try(:strftime, "%d.%m.%Y")
-      td= link_to card.original_text, card_path(card)
+      td= card.original_text
       td= card.translated_text
       td= link_to 'Изменить', edit_card_path(card)
       td= link_to 'Удалить', card_path(card), method: :delete, data: { confirm: 'Уверен?' }

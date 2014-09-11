@@ -20,6 +20,6 @@ html
             li= link_to "Войти", login_path
       div
         - flash.each do |key, value|
-          p id=("#{key}msg") = value
+          div class=flash_class(key) = value
       section
         = yield
