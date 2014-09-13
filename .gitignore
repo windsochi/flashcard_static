@@ -9,7 +9,6 @@ doc/
 *~
 .project
 .DS_Store
-*.DS_Store
 .idea
 .secret
 /public/uploads/

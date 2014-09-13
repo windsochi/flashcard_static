@@ -10,7 +10,7 @@
             = image_tag(@random_card.picture_url, class: "img-responsive")
             .h3
               = @random_card.original_text
-            = form_tag reviews_path, method: :post do
+            = form_tag review_path, method: :post do
               = text_field_tag :search, nil, placeholder: 'Введите перевод', class: 'form-control'
               = hidden_field_tag(:card_id, @random_card.id)
               = submit_tag 'Проверить', class: "btn btn-primary btn-lg btn-block", id: "btn-login"

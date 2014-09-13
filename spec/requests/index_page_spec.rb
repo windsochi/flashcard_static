@@ -39,7 +39,7 @@ describe "Index page" do
         fill_in 'search', with: "Яблоко"
         click_button 'Проверить'
       end
-      it { expect(page).to have_content("Correct!") }
+      it { expect(page).to have_content("Верно!") }
     end
 
   end

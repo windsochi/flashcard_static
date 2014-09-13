@@ -13,7 +13,9 @@ gem 'rmagick', '~> 2.13.3', :require => 'RMagick'
 gem 'fog', '~> 1.23.0'
 gem 'slim-rails'
 gem 'bootstrap-sass'
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails'
+gem 'sprockets', '=2.11.0'
+gem 'text'
 
 group :development, :test do
   gem 'better_errors'
@@ -23,6 +25,7 @@ group :development, :test do
   gem 'database_cleaner', '1.2.0'
   gem 'rails_best_practices'
   gem 'launchy'
+  gem 'pry-rails'
 end
 
 group :production do

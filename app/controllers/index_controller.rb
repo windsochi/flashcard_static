@@ -12,4 +12,11 @@ class IndexController < ApplicationController
     end
   end
 
+  def review
+    @random_card = current_user.due_cards.first
+    card = current_user.cards.find(params[:card_id])
+    @result = card.check_translation(params[:search])
+    redirect_to 'index#index'
+  end
+
 end
