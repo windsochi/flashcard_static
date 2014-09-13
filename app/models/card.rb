@@ -13,16 +13,8 @@ class Card < ActiveRecord::Base
       return true
     else
       processing_incorrect_answer
-      case Text::Levenshtein.distance(translation, translated_text)
-      when 1
-        self.flash_msg = "1 error"
-      when 2
-        self.flash_msg = "2 error"
-      when 3
-        self.flash_msg = "3 error"
-      when 4
-        self.flash_msg = "4 error"
-      end
+      check_levenshtein = Text::Levenshtein.distance(translation, translated_text)
+      self.flash_msg = "#{check_levenshtein} error"
       return false
     end
   end
