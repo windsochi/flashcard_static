@@ -1,4 +1,5 @@
 class Card < ActiveRecord::Base
+  attr_accessor :flash_msg
   belongs_to :user
   belongs_to :deck
   before_create :set_review_date
@@ -12,6 +13,16 @@ class Card < ActiveRecord::Base
       return true
     else
       processing_incorrect_answer
+      case Text::Levenshtein.distance(translation, translated_text)
+      when 1
+        self.flash_msg = "1 error"
+      when 2
+        self.flash_msg = "2 error"
+      when 3
+        self.flash_msg = "3 error"
+      when 4
+        self.flash_msg = "4 error"
+      end
       return false
     end
   end
