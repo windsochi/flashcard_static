@@ -9,11 +9,11 @@ class Card < ActiveRecord::Base
   def check_translation(translation)
     if translation == translated_text
       processing_correct_answer
-      return 0
+      return Result.new(0, :success)
     else
       processing_incorrect_answer
       number_of_errors = Text::Levenshtein.distance(translation, translated_text)
-      return number_of_errors
+      return Result.new(0, :error)
     end
   end
 
