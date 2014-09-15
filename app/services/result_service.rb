@@ -1,13 +1,18 @@
 class ResultService
-  def initialize(translation, translated_text)
-    case Text::Levenshtein.distance(translation, translated_text)
-    when 1
+  def initialize(number_of_errors)
+    if number_of_errors == 0
+      flash[:success] == "0 error"
+      card.update_review_date
+    elsif number_of_errors == 1
       flash[:error] = "1 error"
-    when 2
+      render false
+    elsif number_of_errors == 2
       flash[:error] = "2 errors"
-    when 3
+      render false
+    elsif number_of_errors == 3
       flash[:error] = "3 errors"
-    when 4..15
-      flash[:error] = "More error"
+    else number_of_errors == 4
+      flash[:error] = "4 or more of errors"
+    end
   end
 end

@@ -12,8 +12,8 @@ class Card < ActiveRecord::Base
       return true
     else
       processing_incorrect_answer
-      Result.new(translation, translated_text)
-      return false
+      number_of_errors = Text::Levenshtein.distance(translation, translated_text)
+      return number_of_errors
     end
   end
 
