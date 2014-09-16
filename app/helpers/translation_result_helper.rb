@@ -1,5 +1,5 @@
 module TranslationResultHelper
   def translation_result(result)
-    "В слове найдено ошибок: #{result[:number_of_errors]}."
+    "В слове найдено ошибок: #{result[:number_of_errors]}." if result
   end
 end

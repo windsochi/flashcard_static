@@ -5,12 +5,4 @@
       .panel-heading
         .h1.panel-title Новая карточка
       .panel-body
-        = simple_form_for [@deck, @card] do |f|
-          p
-            = f.input :original_text, as: :string, label: 'Original text', input_html: { class: 'form-control' }
-          p
-            = f.input :translated_text, as: :string, label: 'Translated text', input_html: { class: 'form-control' }
-          p
-            = f.file_field :picture
-          p
-            = f.button :submit, data: { disable_with: 'Сохраняется...' }, class: "btn btn-success btn-lg btn-block", id: "btn-login"
+        = render 'form'

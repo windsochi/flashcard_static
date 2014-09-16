@@ -22,6 +22,7 @@ html
         - flash.each do |key, value|
           div class=flash_class(key) = value
 
-        = translation_result(@result) if @result
+        = translation_result(@result)
+
       section
         = yield
