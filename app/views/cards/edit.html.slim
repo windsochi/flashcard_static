@@ -10,6 +10,8 @@
             = f.input :original_text, as: :string, label: 'Original text:', input_html: { class: 'form-control' }
           p
             = f.input :translated_text, as: :string, label: 'Translated text:', input_html: { class: 'form-control' }
+            p
+            = f.input :review_date, as: :string, label: 'Review date:', input_html: { class: 'form-control' }
           p
             = f.file_field :picture
           - if @card.picture?

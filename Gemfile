@@ -24,6 +24,7 @@ group :development, :test do
   gem 'database_cleaner', '1.2.0'
   gem 'rails_best_practices'
   gem 'launchy'
+  gem 'pry-rails'
 end
 
 group :production do
