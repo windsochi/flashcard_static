@@ -13,7 +13,7 @@ FlashcardStatic::Application.routes.draw do
     end
   end
 
-  post   'reviews', to: 'reviews#create'
+  post   'reviews', to: 'index#reviews'
   get    'login',   to: 'user_sessions#new'
   post   'login',   to: 'user_sessions#create'
   delete 'logout',  to: 'user_sessions#destroy'

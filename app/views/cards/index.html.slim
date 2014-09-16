@@ -11,7 +11,8 @@ table.table.table-hover
   - @deck.cards.each do |card|
 
     tr
-      td= card.review_date.try(:strftime, "%d.%m.%Y")
+      td= card.review_date
+      / td= card.review_date.strftime("%d.%m.%Y")
       td= card.original_text
       td= card.translated_text
       td= link_to 'Изменить', edit_card_path(card)
