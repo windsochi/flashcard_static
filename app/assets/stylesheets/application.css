@@ -1,4 +1,5 @@
 /*
+  *= require lazybox
   *= require index
   *= require_self
   *= require_tree .

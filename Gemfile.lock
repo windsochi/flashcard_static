@@ -33,8 +33,6 @@ GEM
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
-    bootstrap-sass (3.2.0.2)
-      sass (~> 3.2)
     builder (3.1.4)
     capybara (2.4.1)
       mime-types (>= 1.16)
@@ -108,6 +106,7 @@ GEM
     jwt (1.0.0)
     launchy (2.4.2)
       addressable (~> 2.3)
+    lazybox (1.0.2)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -248,7 +247,6 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
-  bootstrap-sass
   capybara (~> 2.4.1)
   carrierwave (~> 0.10.0)
   coffee-rails (~> 4.0.0)
@@ -258,6 +256,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   launchy
+  lazybox
   pg
   pry-rails
   rails (= 4.0.2)

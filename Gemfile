@@ -12,10 +12,10 @@ gem 'carrierwave', '~> 0.10.0'
 gem 'rmagick', '~> 2.13.3', :require => 'RMagick'
 gem 'fog', '~> 1.23.0'
 gem 'slim-rails'
-gem 'bootstrap-sass'
 gem 'sass-rails'
 gem 'sprockets', '=2.11.0'
 gem 'text'
+gem 'lazybox'
 
 group :development, :test do
   gem 'better_errors'
