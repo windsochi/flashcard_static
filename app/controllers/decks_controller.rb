@@ -1,4 +1,5 @@
 class DecksController < ApplicationController
+  respond_to :html, :js
   before_action :find_deck, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -11,20 +12,11 @@ class DecksController < ApplicationController
 
   def new
     @deck = current_user.decks.new
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
 
   def create
     @deck = current_user.decks.create(deck_params)
-    if @deck.save
-      redirect_to decks_path, notice: 'Колода успешно создана'
-    else
-      flash[:alert] = 'Колода не создана'
-      render :new
-    end
+    @decks = current_user.decks
   end
 
   def edit
