@@ -11,11 +11,14 @@ class DecksController < ApplicationController
 
   def new
     @deck = current_user.decks.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
     @deck = current_user.decks.create(deck_params)
-    render action: :new unless @deck.save
     if @deck.save
       redirect_to decks_path, notice: 'Колода успешно создана'
     else

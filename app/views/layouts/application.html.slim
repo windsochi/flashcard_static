@@ -7,6 +7,7 @@ html
     = javascript_include_tag "application",               "data-turbolinks-track" => true
     = csrf_meta_tags
   body
+
     section#container
       header.clearfix
         h1= link_to 'Флэшкарточкер', root_path
@@ -26,3 +27,5 @@ html
 
       section
         = yield
+
+        #modal-window.modal aria-hidden="true" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"

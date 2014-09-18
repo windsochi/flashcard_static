@@ -13,5 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require lazybox
+//= require bootstrap
+//= require bootstrap/modal
+//= require bootstrap-sprockets
 //= require_tree .

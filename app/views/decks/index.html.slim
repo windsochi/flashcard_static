@@ -17,4 +17,5 @@ table.table.table-hover
       td = link_to 'Изменить', edit_deck_path(deck)
       td = link_to 'Удалить', deck_path(deck), method: :delete, data: { confirm: 'Уверен?' }
 br
-  = button_to 'Добавить колоду', new_deck_path, method: :get, remote: true, :class => "btn btn-primary"
+
+  = button_to 'Добавить колоду', new_deck_path, {remote: true, method: :get, 'data-toggle' => "modal", 'data-target' => '#modal-window', :class => "btn btn-primary"}
