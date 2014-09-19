@@ -24,6 +24,8 @@ class CardsController < ApplicationController
 
   def update
     @card.update(card_params)
+    current_deck = @card.deck_id
+    @deck = current_user.decks.find(current_deck)
     @cards = @deck.cards
   end
 
