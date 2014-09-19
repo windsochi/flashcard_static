@@ -23,11 +23,8 @@ class DecksController < ApplicationController
   end
 
   def update
-    if @deck.update(deck_params)
-      redirect_to decks_path, notice: 'Колода успещно обновлена'
-    else
-      render :edit
-    end
+    @deck.update(deck_params)
+    @decks = current_user.decks
   end
 
   def destroy
