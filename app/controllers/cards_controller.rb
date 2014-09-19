@@ -1,4 +1,5 @@
 class CardsController < ApplicationController
+  respond_to :html, :js
   before_action :find_card, only: [:show, :edit, :update, :destroy]
   before_action :find_deck, only: [:index, :new, :create]
 
@@ -12,12 +13,7 @@ class CardsController < ApplicationController
 
   def create
     @card = @deck.cards.create(card_params.merge(user: current_user))
-    if @card.save
-      redirect_to deck_cards_path(@card.deck_id), notice: 'Карточка успешно создана'
-    else
-      flash[:alert] = 'Карточка не создана'
-      render :new
-    end
+    @cards = @deck.cards
   end
 
   def show
@@ -27,11 +23,8 @@ class CardsController < ApplicationController
   end
 
   def update
-    if @card.update(card_params)
-      redirect_to deck_cards_path(@card.deck_id), notice: 'Карточка успешно обновлена'
-    else
-      render :edit
-    end
+    @card.update(card_params)
+    @cards = @deck.cards
   end
 
   def destroy

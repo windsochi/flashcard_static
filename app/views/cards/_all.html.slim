@@ -1,0 +1,13 @@
+tr
+  th Дата пересмотра
+  th Слово
+  th Перевод
+  th
+  th
+- cards.each do |card|
+  tr
+    td= card.review_date.strftime("%d.%m.%Y")
+    td= card.original_text
+    td= card.translated_text
+    td= link_to 'Изменить', edit_card_path(card), { remote: true, method: :get, 'data-toggle' => "modal", 'data-target' => '#modal-window' }
+    td= link_to 'Удалить', card_path(card), method: :delete, data: { confirm: 'Уверен?' }

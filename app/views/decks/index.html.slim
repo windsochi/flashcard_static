@@ -2,8 +2,8 @@
 
 table.table.table-hover
   tbody.decks-index
-    = render 'decks/index', decks: @decks
+    = render 'decks/all', decks: @decks
 
 br
 
-  = button_to 'Добавить колоду', new_deck_path, {remote: true, method: :get, 'data-toggle' => "modal", 'data-target' => '#modal-window', :class => "btn btn-primary"}
+  = button_to 'Добавить колоду', new_deck_path, { remote: true, method: :get, 'data-toggle' => "modal", 'data-target' => '#modal-window', :class => "btn btn-primary" }
