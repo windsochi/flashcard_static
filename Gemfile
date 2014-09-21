@@ -16,6 +16,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'sass-rails', '>= 3.2'
 gem 'sprockets', '=2.11.0'
 gem 'text'
+gem 'remotipart'
 
 group :development, :test do
   gem 'better_errors'

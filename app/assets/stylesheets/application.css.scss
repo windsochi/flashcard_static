@@ -7,6 +7,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('../assets/glyphicons-halflings-regular.eot');
@@ -14,28 +15,6 @@
        url('../assets/glyphicons-halflings-regular.woff') format('woff'),
        url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),
        url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-}
-
-.modal {
-position: fixed;
-top: 10%;
-z-index: 1050;
-width: 500px;
-height: 300px;
-margin: 0 auto;
-background-color: #FFF;
-border: 1px solid #999;
-border: 1px solid rgba(0, 0, 0, 0.3);
--webkit-border-radius: 6px;
--moz-border-radius: 6px;
-border-radius: 6px;
-outline: none;
--webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
--moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
--webkit-background-clip: padding-box;
--moz-background-clip: padding-box;
-background-clip: padding-box;
 }
 
 #container {

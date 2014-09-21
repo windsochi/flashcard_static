@@ -36,7 +36,7 @@ GEM
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
     builder (3.1.4)
-    capybara (2.4.1)
+    capybara (2.4.2)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
@@ -172,6 +172,7 @@ GEM
     rake (10.3.2)
     rdoc (4.1.2)
       json (~> 1.4)
+    remotipart (1.2.1)
     require_all (1.3.2)
     rmagick (2.13.3)
     rspec-core (3.0.4)
@@ -190,7 +191,7 @@ GEM
       rspec-mocks (~> 3.0.0)
       rspec-support (~> 3.0.0)
     rspec-support (3.0.4)
-    ruby-progressbar (1.5.1)
+    ruby-progressbar (1.6.0)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -263,6 +264,7 @@ DEPENDENCIES
   rails (= 4.0.2)
   rails_12factor (~> 0.0.2)
   rails_best_practices
+  remotipart
   rmagick (~> 2.13.3)
   rspec-rails (~> 3.0.2)
   sass-rails (>= 3.2)
