@@ -12,11 +12,11 @@ gem 'carrierwave', '~> 0.10.0'
 gem 'rmagick', '~> 2.13.3', :require => 'RMagick'
 gem 'fog', '~> 1.23.0'
 gem 'slim-rails'
-gem 'bootstrap-sass', '~> 3.2.0'
 gem 'sass-rails', '>= 3.2'
-gem 'sprockets', '=2.11.0'
 gem 'text'
 gem 'remotipart'
+gem 'bootstrap-sass'
+gem 'sass-rails', '>= 3.2'
 
 group :development, :test do
   gem 'better_errors'

@@ -2,7 +2,7 @@
   button.close aria-hidden="true" data-dismiss="modal" type="button" ×
   h3#myModalLabel Изменение карточки
 .modal-body
-  = simple_form_for [@deck, @card], remote: true do |f|
+  = simple_form_for [@deck, @card], remote: true, authenticity_token: true do |f|
     p
       = f.input :original_text, as: :string, label: 'Original text', input_html: { class: 'form-control' }
     p
