@@ -1,9 +1,11 @@
-.modal-header
-  button.close aria-hidden="true" data-dismiss="modal" type="button" ×
-  h3#myModalLabel Редактирование колоды
-.modal-body
-  = simple_form_for @deck, remote: true do |f|
-    p
-      = f.input :title, label: 'Имя колоды', input_html: { class: 'form-control' }
-    p
-      = f.button :submit, data: { disable_with: 'Сохраняется...' }, class: "btn btn-success btn-lg btn-block", id: "btn-login"
+.modal-dialog
+  .modal-content
+    .modal-header
+      button.close aria-hidden="true" data-dismiss="modal" type="button" ×
+      h3#myModalLabel Редактирование колоды
+    .modal-body
+      = simple_form_for @deck, remote: true do |f|
+        p
+          = f.input :title, label: 'Имя колоды', input_html: { class: 'form-control' }
+        p
+          = f.button :submit, data: { disable_with: 'Сохраняется...' }, class: "btn btn-success btn-lg btn-block", id: "btn-login"

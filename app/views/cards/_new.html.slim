@@ -1,15 +1,17 @@
-.modal-header
-  button.close aria-hidden="true" data-dismiss="modal" type="button" ×
-  h3#myModalLabel Новая карточка
-.modal-body
-  = simple_form_for [@deck, @card], remote: true, authenticity_token: true do |f|
-    p
-      = f.input :original_text, as: :string, label: 'Original text', input_html: { class: 'form-control' }
-    p
-      = f.input :translated_text, as: :string, label: 'Translated text', input_html: { class: 'form-control' }
-    p
-      = f.file_field :picture
-    p
-      = f.button :submit, data: { disable_with: 'Сохраняется...' }, class: "btn btn-success btn-lg btn-block", id: "btn-login"
-.modal-footer
-  button.btn.btn-default data-dismiss="modal" type="button" Close
+.modal-dialog
+  .modal-content
+    .modal-header
+      button.close aria-hidden="true" data-dismiss="modal" type="button" ×
+      h3#myModalLabel Новая карточка
+    .modal-body
+      = simple_form_for [@deck, @card], remote: true, authenticity_token: true do |f|
+        p
+          = f.input :original_text, as: :string, label: 'Original text', input_html: { class: 'form-control' }
+        p
+          = f.input :translated_text, as: :string, label: 'Translated text', input_html: { class: 'form-control' }
+        p
+          = f.file_field :picture
+        p
+          = f.button :submit, data: { disable_with: 'Сохраняется...' }, class: "btn btn-success btn-lg btn-block", id: "btn-login"
+    .modal-footer
+      button.btn.btn-default data-dismiss="modal" type="button" Close
