@@ -5,7 +5,7 @@
       .panel-body
         - if @random_card
           .h3
-            = "Колода: #{current_user.current_deck.title}" if current_user.current_deck_id
+            = "Колода: #{current_user.current_deck.title}" if current_user.current_deck
           br
             = image_tag(@random_card.picture_url, class: "img-responsive")
             .h3

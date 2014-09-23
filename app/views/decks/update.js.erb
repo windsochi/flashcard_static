@@ -1,3 +1,6 @@
 $("#modal-window").modal("hide");
 $(".decks-index").html('<%= j render 'decks/all', decks: @decks %>');
 $("#deck_title").val('');
+$("alert.alert-warning").val('');
+$("alert.alert-success").val('');
+$("alert.alert-danger").val('');

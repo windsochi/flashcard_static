@@ -10,4 +10,4 @@ tr
     td= card.original_text
     td= card.translated_text
     td= link_to 'Изменить', edit_card_path(card), { remote: true, method: :get, 'data-toggle' => "modal", 'data-target' => '#modal-window' }
-    td= link_to 'Удалить', card_path(card), method: :delete, data: { confirm: 'Уверен?' }
+    td= link_to 'Удалить', card_path(card), method: :delete, remote: true

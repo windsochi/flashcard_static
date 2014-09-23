@@ -31,7 +31,9 @@ class CardsController < ApplicationController
 
   def destroy
     @card.destroy
-    redirect_to deck_cards_path(@card.deck_id), notice: 'Карточка удалена'
+    current_deck = @card.deck_id
+    @deck = current_user.decks.find(current_deck)
+    @cards = @deck.cards
   end
 
   private

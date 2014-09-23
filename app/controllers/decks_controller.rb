@@ -29,7 +29,7 @@ class DecksController < ApplicationController
 
   def destroy
     @deck.destroy
-    redirect_to decks_path, notice: 'Колода удалена'
+    @decks = current_user.decks
   end
 
   private

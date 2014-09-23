@@ -19,7 +19,7 @@ html
           - else
             li= link_to "Регистрация", new_user_path
             li= link_to "Войти", login_path
-      div
+      .messages
         - flash.each do |key, value|
           div class=flash_class(key) = value
 
